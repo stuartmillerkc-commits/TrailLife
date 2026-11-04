@@ -34,7 +34,26 @@
       "properties": {
         "headline": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
         "body": { "type": "string" },
+        "points": { "$ref": "common.schema.json#/$defs/textList", "description": "Short bullet points shown under the body. Boy-safe only: never answers." },
         "images": { "$ref": "common.schema.json#/$defs/idList", "description": "Ids from content/images/manifest.json." }
+      }
+    },
+    "promptLabel": {
+      "$ref": "common.schema.json#/$defs/nonEmptyText",
+      "description": "What one prompt is called on screen, e.g. \"Graduate\" shows \"Graduate 3 of 13\". Defaults to \"Question\"."
+    },
+    "prompts": {
+      "type": "array",
+      "description": "Numbered items shown one at a time on the projector, each with its own answer: graduates to sort, scenarios to judge. The → key steps through them before moving to the next module; R reveals the current one's answer. Added in Phase 1 (docs/decisions.md).",
+      "items": {
+        "type": "object",
+        "required": ["text", "answer"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "Shown on the projector." },
+          "answer": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "Leader-only until revealed." },
+          "factIds": { "$ref": "common.schema.json#/$defs/idList" }
+        }
       }
     },
     "leaderScript": { "$ref": "common.schema.json#/$defs/textList", "description": "Step-by-step instructions for the leader, in order." },
@@ -58,7 +77,31 @@
       "additionalProperties": false,
       "properties": {
         "type": { "enum": ["table", "list", "text", "image"] },
-        "text": { "type": "string" },
+        "title": { "type": "string", "description": "Optional heading above the answer key." },
+        "text": { "type": "string", "description": "For type \"text\"." },
+        "items": { "$ref": "common.schema.json#/$defs/textList", "description": "For type \"list\"." },
+        "table": {
+          "type": "object",
+          "description": "For type \"table\". Each row names the fact that backs it, so every cell traces to a source.",
+          "required": ["columns", "rows"],
+          "additionalProperties": false,
+          "properties": {
+            "columns": { "$ref": "common.schema.json#/$defs/textList" },
+            "rows": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["cells"],
+                "additionalProperties": false,
+                "properties": {
+                  "cells": { "$ref": "common.schema.json#/$defs/textList" },
+                  "factIds": { "$ref": "common.schema.json#/$defs/idList" }
+                }
+              }
+            }
+          }
+        },
         "factIds": { "$ref": "common.schema.json#/$defs/idList" }
       }
     },
