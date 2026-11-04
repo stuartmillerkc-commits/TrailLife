@@ -1,83 +1,67 @@
-// Phase 0 placeholder app: lists the modules and facts found in /content.
-// Phase 1 replaces this with the router, navigator and presenter (PLAN.md section 4).
+// The site's starting point. It reads the address after "#" and shows the matching page.
 //
-// Kept as a single file on purpose for now: scripts/build-single-file.js inlines
-// it as-is. Once the app is split into several modules, Phase 7 extends the build.
+// Two kinds of window:
+//   - the display (projector) window, #/display: loads no content at all, only shows
+//     what the leader window sends it (src/views/display-view.js)
+//   - every other page is the leader window: loads the content and drives the display
+//
+// See src/router.js for the list of addresses.
 
-// Load one content file, e.g. "facts/branches.json".
-// In the offline single-file build, every content file is embedded in the page
-// inside <script type="application/json" id="embedded-content">, so no network is needed.
-const embeddedContentElement = document.getElementById("embedded-content");
-const embeddedContent = embeddedContentElement ? JSON.parse(embeddedContentElement.textContent) : null;
+import { parseHash } from "./router.js";
+import { startDisplayView } from "./views/display-view.js";
+import { loadAllContent } from "./content/content-loader.js";
+import { createLeaderLink } from "./presenter/display-channel.js";
+import { buildIdleSnapshot } from "./presenter/display-snapshot.js";
+import { startPresenterView } from "./views/presenter-view.js";
+import { renderError, renderHome, renderLibrary, renderMeetings, renderNotFound } from "./views/home-views.js";
 
-async function loadContentFile(relativePath) {
-  if (embeddedContent) {
-    if (!(relativePath in embeddedContent)) throw new Error(`${relativePath} isn't in this offline build`);
-    return embeddedContent[relativePath];
-  }
-  const response = await fetch(`content/${relativePath}`);
-  if (!response.ok) throw new Error(`Couldn't load content/${relativePath} (${response.status})`);
-  return response.json();
-}
-
-function makeElement(tag, { className, text } = {}, children = []) {
-  const element = document.createElement(tag);
-  if (className) element.className = className;
-  if (text !== undefined) element.textContent = text;
-  children.forEach((child) => element.appendChild(child));
-  return element;
-}
-
-function showError(listElement, message) {
-  listElement.replaceChildren(makeElement("li", { className: "error-message", text: message }));
-}
-
-function renderModules(modules, listElement) {
-  if (modules.length === 0) { listElement.replaceChildren(makeElement("li", { text: "No modules yet." })); return; }
-  listElement.replaceChildren(...modules.map((module) => {
-    const requirementText = module.requirements.length ? `Requirement ${module.requirements.join(", ")}` : "No requirement";
-    // Only boy-safe fields here: never leaderScript, answers or reveal text.
-    return makeElement("li", {}, [
-      makeElement("h3", { text: module.title }),
-      makeElement("p", { className: "card-meta", text: `${requirementText} · ${module.durationMinutes} min · ${module.activityType.join(", ")}` }),
-      makeElement("p", { text: module.displayContent.headline })
-    ]);
-  }));
-}
-
-function renderFacts(facts, listElement) {
-  if (facts.length === 0) { listElement.replaceChildren(makeElement("li", { text: "No facts yet." })); return; }
-  listElement.replaceChildren(...facts.map((fact) => {
-    const sourceParagraph = makeElement("p", { className: "card-meta" });
-    if (fact.source) {
-      const link = makeElement("a", { text: fact.source.title });
-      link.href = fact.source.url;
-      link.target = "_blank";
-      link.rel = "noopener";
-      sourceParagraph.append("Source: ", link, ` · verified ${fact.verifiedOn}`);
-    } else {
-      sourceParagraph.textContent = fact.sourceId ? `Source: ${fact.sourceId}` : "Needs verification";
-    }
-    return makeElement("li", {}, [makeElement("p", { text: fact.statement }), sourceParagraph]);
-  }));
-}
+const root = document.getElementById("app");
 
 async function start() {
-  const moduleList = document.getElementById("module-list");
-  const factList = document.getElementById("fact-list");
-  try {
-    const { files } = await loadContentFile("index.json");
-    const moduleFiles = files.filter((file) => file.startsWith("modules/"));
-    const factFiles = files.filter((file) => file.startsWith("facts/"));
-    const modules = await Promise.all(moduleFiles.map(loadContentFile));
-    const factGroups = await Promise.all(factFiles.map(loadContentFile));
-    renderModules(modules, moduleList);
-    renderFacts(factGroups.flat(), factList);
-  } catch (error) {
-    const message = `${error.message}. If you opened index.html by double-clicking it, run \`npm start\` and use http://localhost:8000 instead.`;
-    showError(moduleList, message);
-    showError(factList, message);
+  // The projector window takes a separate path, before any content is loaded.
+  if (parseHash(location.hash).name === "display") {
+    startDisplayView(root);
+    return;
   }
+
+  let content;
+  try {
+    content = await loadAllContent();
+  } catch (error) {
+    renderError(root, `${error.message}. If you opened index.html by double-clicking it, run “npm start” and use http://localhost:8000 instead, or use the offline file from “npm run build”.`);
+    return;
+  }
+
+  const link = createLeaderLink();
+  window.addEventListener("pagehide", () => link.close());
+  let stopCurrentView = null;
+
+  function showRoute() {
+    if (stopCurrentView) { stopCurrentView(); stopCurrentView = null; }
+    const route = parseHash(location.hash);
+
+    if (route.name === "display") { location.reload(); return; } // switching this window into projector mode
+    if (route.name === "lead") {
+      const sequence = content.sequences.get(route.sequenceId);
+      if (!sequence) { link.send(buildIdleSnapshot()); renderNotFound(root, `There’s no meeting called “${route.sequenceId}”.`); return; }
+      stopCurrentView = startPresenterView(root, { mode: "sequence", sequence, route, content, link });
+    } else if (route.name === "module") {
+      const module = content.modules.get(route.moduleId);
+      if (!module) { link.send(buildIdleSnapshot()); renderNotFound(root, `There’s no module called “${route.moduleId}”.`); return; }
+      stopCurrentView = startPresenterView(root, { mode: "module", module, route, content, link });
+    } else {
+      link.send(buildIdleSnapshot()); // nothing to project on these pages
+      if (route.name === "home") renderHome(root, content);
+      else if (route.name === "meetings") renderMeetings(root, content);
+      else if (route.name === "library") renderLibrary(root, content);
+      else renderNotFound(root, "That address doesn’t match any page.");
+    }
+    document.getElementById("main")?.focus({ preventScroll: true });
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener("hashchange", showRoute);
+  showRoute();
 }
 
 start();
