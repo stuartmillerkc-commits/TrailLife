@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<!-- Manual browser check for two-window mode. Run `npm start`, then open
+     http://localhost:8000/tests/browser/two-window-check.html and wait about 10 seconds.
+     It drives the leader page in the top frame and prints what the projector frame shows.
+     Step 4 must show no answer; step 5 must be blank. It starts Meeting 1's timer and turns
+     on Short on time, so press "Reset meeting" afterwards (or clear the site's storage). -->
+<html><head><meta charset="utf-8"><title>Two-window check</title></head>
+<body>
+<iframe id="leader" src="../../index.html#/lead/meeting-1-who-serves/3" width="1400" height="900"></iframe>
+<iframe id="display" src="../../index.html#/display" width="1280" height="720"></iframe>
+<pre id="log"></pre>
+<script>
+const log = (line) => { document.getElementById("log").textContent += line + "\n"; };
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const leader = () => document.getElementById("leader").contentWindow;
+const display = () => document.getElementById("display").contentWindow;
+const press = (key, target = leader()) => target.document.dispatchEvent(new target.KeyboardEvent("keydown", { key, bubbles: true }));
+const displayText = () => display().document.querySelector(".display-stage")?.innerText.replace(/\s+/g, " ").trim();
+const status = () => leader().document.querySelector(".projector-status")?.textContent;
+const spy = new BroadcastChannel("military-heritage-display");
+spy.onmessage = (event) => log(`   [channel] ${event.data.type} #${event.data.messageNumber ?? event.data.messageId}`);
+(async () => {
+  await wait(1500);
+  log("1 status: " + status());
+  log("1 display: " + displayText());
+  press("ArrowRight"); await wait(300);
+  log("2 after →: " + displayText());
+  press("r"); await wait(300);
+  log("3 after R: " + displayText());
+  press("ArrowRight"); await wait(300);
+  log("4 after → (answer must be hidden): " + displayText());
+  press("b"); await wait(300);
+  log("5 after B: [" + displayText() + "] blank=" + display().document.querySelector(".display-stage").classList.contains("is-blank"));
+  press("b"); await wait(300);
+  press("ArrowRight", display()); await wait(400);
+  log("6 → pressed in DISPLAY window: " + displayText());
+  log("6 leader stage: " + leader().document.querySelector(".stage-button.current")?.textContent);
+  press(" "); await wait(1200);
+  log("7 timer after Space: " + leader().document.querySelector(".timer-readout")?.textContent + " / " + leader().document.querySelector(".meeting-readout")?.textContent);
+  leader().document.getElementById("short-on-time").click(); await wait(300);
+  log("8 short on: " + leader().document.querySelector(".rail-heading")?.textContent + " / hash " + leader().location.hash);
+  log("9 reloading display");
+  display().location.reload(); await wait(3000);
+  log("9 display after reload: " + displayText());
+  log("9 status: " + status());
+  log("DONE");
+})();
+</script>
+</body></html>

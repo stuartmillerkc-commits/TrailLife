@@ -47,19 +47,25 @@ export function formatClock(milliseconds) {
   return `${negative ? "−" : ""}${minutes}:${String(seconds).padStart(2, "0")}`;
 }
 
-// How far behind (positive) or ahead (negative) of the plan the whole meeting is, in milliseconds.
-// Planned finish: when the meeting started plus the minutes of every step still in the plan.
-// Projected finish: now, plus what's left of the current step, plus every later step in the plan.
+// How far behind (positive) or ahead (negative) of the plan the meeting is, in milliseconds.
+// Only steps that were actually timed count:
+//   - each earlier step that has time on its clock adds (time used − time planned)
+//   - the current step adds its overrun once it passes its planned time (running short
+//     on the current step isn't "ahead" yet; it might still use all its time)
+// Steps never timed (skipped, or before the leader started the clock) add nothing, so
+// starting the timer at step 3 reads "on time", not "20 min ahead".
 // Returns null until the meeting has started.
-//   steps: [{ minutes, visible }]   timers: one per step   currentIndex: the step on screen
+//   steps: [{ minutes }]   timers: one per step   currentIndex: the step on screen
 export function scheduleDriftMs({ steps, timers, currentIndex, meetingStartedAt, now }) {
   if (meetingStartedAt === null || meetingStartedAt === undefined) return null;
-  const plannedTotalMs = steps.filter((step) => step.visible).reduce((total, step) => total + step.minutes * 60000, 0);
-  const plannedFinish = meetingStartedAt + plannedTotalMs;
-  const currentStep = steps[currentIndex];
-  const currentLeftMs = currentStep ? Math.max(0, remainingMs(currentStep.minutes, timers[currentIndex], now)) : 0;
-  const laterMs = steps.slice(currentIndex + 1).filter((step) => step.visible).reduce((total, step) => total + step.minutes * 60000, 0);
-  return now + currentLeftMs + laterMs - plannedFinish;
+  let drift = 0;
+  steps.forEach((step, index) => {
+    const used = elapsedMs(timers[index], now);
+    const planned = step.minutes * 60000;
+    if (index < currentIndex && used > 0) drift += used - planned;
+    if (index === currentIndex) drift += Math.max(0, used - planned);
+  });
+  return drift;
 }
 
 // -125000 -> "2 min ahead"; 30000 -> "on time" (within a minute either way).

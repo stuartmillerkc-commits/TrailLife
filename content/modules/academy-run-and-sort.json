@@ -14,7 +14,7 @@
     "points": ["West Point: U.S. Military Academy", "Annapolis: U.S. Naval Academy", "Colorado Springs: U.S. Air Force Academy"],
     "images": []
   },
-  "promptLabel": "Graduate",
+  "promptLabel": "Round",
   "prompts": [
     { "text": "Ulysses S. Grant", "answer": "West Point (Army), class of 1843", "factIds": ["grad-grant"] },
     { "text": "Chester Nimitz", "answer": "Naval Academy (Navy), class of 1905", "factIds": ["grad-nimitz"] },

@@ -5,9 +5,10 @@
 import { makeDetails, makeElement, makeExternalLink } from "./dom.js";
 import { renderAnswer } from "./display-renderer.js";
 
-export function describeModuleMeta(module) {
+// "Req 1 · 15 min · competition, hands-on · indoor". Pass withRequirements: false when badges show them.
+export function describeModuleMeta(module, { withRequirements = true } = {}) {
   const requirementText = module.requirements.length ? `Req ${module.requirements.join(", ")}` : "No requirement";
-  return [requirementText, `${module.durationMinutes} min`, module.activityType.join(", "), module.setting].filter(Boolean).join(" · ");
+  return [withRequirements ? requirementText : null, `${module.durationMinutes} min`, module.activityType.join(", "), module.setting].filter(Boolean).join(" · ");
 }
 
 export function renderRequirementBadges(module) {

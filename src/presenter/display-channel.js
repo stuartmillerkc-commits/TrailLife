@@ -143,11 +143,18 @@ export function acceptLeaderMessage(tracker, message) {
 export function createDisplayLink({ onScreen, onGoodbye }) {
   const broadcast = openBroadcastChannel();
   let tracker = { sessionId: null, lastMessageNumber: 0 };
+  const displayId = makeSessionId();
+  let outgoingNumber = 0;
+  const nextMessageId = () => `${displayId}-${++outgoingNumber}`;
 
   function receive(message) {
     const result = acceptLeaderMessage(tracker, message);
     if (!result.accept) return;
+    // First message from this leader session: say hello, so a leader page that loaded after
+    // this window (and missed the first "display-ready") knows the projector is there.
+    const isNewSession = result.tracker.sessionId !== tracker.sessionId;
     tracker = result.tracker;
+    if (isNewSession && message.type === "screen") announceReady();
     if (message.type === "screen") onScreen(message);
     if (message.type === "goodbye" && onGoodbye) onGoodbye();
   }
@@ -162,12 +169,12 @@ export function createDisplayLink({ onScreen, onGoodbye }) {
     if (event.source === window.opener) receive(event.data);
   });
 
-  const displayId = makeSessionId();
-  let outgoingNumber = 0;
-  const nextMessageId = () => `${displayId}-${++outgoingNumber}`;
+  function announceReady() {
+    deliver({ protocol: 1, type: "display-ready", messageId: nextMessageId() });
+  }
 
   return {
-    announceReady: () => deliver({ protocol: 1, type: "display-ready", messageId: nextMessageId() }),
+    announceReady,
     forwardKey: (key) => { if (FORWARDED_KEYS.includes(key)) deliver({ protocol: 1, type: "key", key, messageId: nextMessageId() }); }
   };
 }

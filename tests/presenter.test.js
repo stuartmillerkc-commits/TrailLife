@@ -125,17 +125,16 @@ test("timer levels: normal, warning at 2 minutes left, overtime past zero", () =
 });
 
 test("behind or ahead of schedule", () => {
-  const steps = plan.steps.map((step) => ({ minutes: step.minutes, visible: true }));
-  const fresh = plan.steps.map(() => ({ elapsedMs: 0, runningSince: null }));
-  assert.equal(scheduleDriftMs({ steps, timers: fresh, currentIndex: 0, meetingStartedAt: null, now: 0 }), null);
-  // 8 minutes in, still on the 5-minute first step: 3 minutes behind.
-  const timers = fresh.map((timer, index) => (index === 0 ? { elapsedMs: 8 * MINUTE, runningSince: null } : timer));
-  assert.equal(describeDrift(scheduleDriftMs({ steps, timers, currentIndex: 0, meetingStartedAt: 0, now: 8 * MINUTE })), "3 min behind");
-  // Moving to step 2 after 3 minutes: 2 minutes ahead.
-  assert.equal(describeDrift(scheduleDriftMs({ steps, timers: fresh, currentIndex: 1, meetingStartedAt: 0, now: 3 * MINUTE })), "2 min ahead");
-  // Short on time drops the optional 10-minute step from the plan.
-  const short = steps.map((step, index) => ({ ...step, visible: index !== 2 }));
-  assert.equal(describeDrift(scheduleDriftMs({ steps: short, timers: fresh, currentIndex: 0, meetingStartedAt: 0, now: 0 })), "On time");
+  const steps = plan.steps.map((step) => ({ minutes: step.minutes }));
+  const timed = (minutesPerStep) => minutesPerStep.map((minutes) => ({ elapsedMs: minutes * MINUTE, runningSince: null }));
+  const drift = (timers, currentIndex) => describeDrift(scheduleDriftMs({ steps, timers, currentIndex, meetingStartedAt: 0, now: 0 }));
+
+  assert.equal(scheduleDriftMs({ steps, timers: timed([0, 0, 0, 0]), currentIndex: 0, meetingStartedAt: null, now: 0 }), null);
+  assert.equal(drift(timed([8, 0, 0, 0]), 0), "3 min behind", "8 minutes on a 5-minute step");
+  assert.equal(drift(timed([3, 0, 0, 0]), 0), "On time", "short on the current step isn't ahead yet");
+  assert.equal(drift(timed([3, 0, 0, 0]), 1), "2 min ahead", "finished a 5-minute step in 3");
+  assert.equal(drift(timed([0, 0, 1, 0]), 2), "On time", "starting the clock at step 3 doesn’t count steps 1 and 2 as saved");
+  assert.equal(drift(timed([7, 12, 0, 0]), 3), "4 min behind", "2 over, 2 over, optional step skipped");
 });
 
 // ---------- deep links ----------

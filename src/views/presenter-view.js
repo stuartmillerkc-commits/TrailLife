@@ -93,11 +93,12 @@ export function startPresenterView(root, options) {
     stepParts.shortNote = makeElement("div", { className: "short-note", attributes: { role: "note" } });
     stepParts.stepMeta = makeElement("p", { className: "card-meta" });
 
-    stepArea.replaceChildren(
+    // (filter(Boolean) drops the parts this page doesn't have; replaceChildren would print "null".)
+    stepArea.replaceChildren(...[
       stepParts.stepMeta,
       makeElement("h1", { text: module.title, attributes: { id: "step-title" } }),
-      makeElement("p", { className: "card-meta" }, [renderRequirementBadges(module), " ", describeModuleMeta(module)]),
-      !isSequence ? renderUsedIn(module.id, content) : null,
+      makeElement("p", { className: "card-meta" }, [renderRequirementBadges(module), " ", describeModuleMeta(module, { withRequirements: false })]),
+      isSequence ? null : renderUsedIn(module.id, content),
       stepParts.shortNote,
       makeElement("div", { className: "presenter" }, [
         makeElement("div", { className: "preview-column" }, [
@@ -117,7 +118,7 @@ export function startPresenterView(root, options) {
         ])
       ]),
       ...renderLeaderPanels(module, content)
-    );
+    ].filter(Boolean));
     renderedStepIndex = state.stepIndex;
   }
 
@@ -149,6 +150,13 @@ export function startPresenterView(root, options) {
         onClick: () => apply(jumpToStage(plan, state, stageIndex))
       })]);
     }));
+
+    // Keep the current screen visible in the (scrolling) list without scrolling the whole page.
+    const currentButton = stepParts.stageList.querySelector(".current");
+    const list = stepParts.stageList;
+    if (currentButton && (currentButton.offsetTop < list.scrollTop || currentButton.offsetTop + currentButton.offsetHeight > list.scrollTop + list.clientHeight)) {
+      list.scrollTop = currentButton.offsetTop - list.clientHeight / 2;
+    }
 
     // The answer for the current screen, always visible to the leader.
     const leaderView = buildDisplaySnapshot({ module: step.module, stage, revealed: true });
@@ -201,7 +209,7 @@ export function startPresenterView(root, options) {
     timerReadout.className = `timer-readout level-${level}`;
     timerButton.textContent = isRunning(timer) ? "Pause (Space)" : (elapsedMs(timer, now) > 0 ? "Resume (Space)" : "Start (Space)");
     const drift = scheduleDriftMs({
-      steps: plan.steps.map((planStep) => ({ minutes: planStep.minutes, visible: isStepVisible(planStep, state.shortOnTime) })),
+      steps: plan.steps,
       timers: state.timers,
       currentIndex: state.stepIndex,
       meetingStartedAt: state.meetingStartedAt,

@@ -117,7 +117,7 @@ button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
 .preview-label { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); margin: 0 0 6px; }
 .presenter-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .presenter-buttons button { flex: 1 1 auto; }
-.stage-list { list-style: none; padding: 0; margin: 0 0 12px; max-height: 300px; overflow: auto; display: grid; gap: 3px; }
+.stage-list { position: relative; /* so buttons measure their position from the list */ list-style: none; padding: 0; margin: 0 0 12px; max-height: 300px; overflow: auto; display: grid; gap: 3px; }
 .stage-button { width: 100%; text-align: left; font-size: 0.9rem; padding: 4px 8px; }
 .stage-button.current { border-color: var(--american); border-width: 2px; font-weight: 700; }
 .leader-answer-box { border: 2px dashed var(--brass); border-radius: 6px; padding: 8px 12px; }
