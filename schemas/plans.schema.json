@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plans.schema.json",
+  "title": "Intended plans",
+  "description": "content/battles/<id>/plans.json: what each commander meant to happen, drawn as a dashed brass layer (PLAN.md 8.13). Include a plan only where sources document it.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "side", "commander", "label", "arrows", "sourceIds"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "side": { "$ref": "common.schema.json#/$defs/side" },
+      "commander": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+      "label": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "e.g. “Morgan’s plan”." },
+      "atPhase": { "type": "integer", "minimum": 0, "description": "The phase the plan belongs to (usually 0, before the fight)." },
+      "positions": {
+        "type": "object",
+        "description": "Where units were meant to be, keyed by unit id.",
+        "additionalProperties": { "$ref": "common.schema.json#/$defs/point" }
+      },
+      "arrows": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["path"],
+          "additionalProperties": false,
+          "properties": {
+            "unitId": { "$ref": "common.schema.json#/$defs/id" },
+            "label": { "type": "string" },
+            "path": { "$ref": "common.schema.json#/$defs/pointList" }
+          }
+        }
+      },
+      "notes": { "type": "string" },
+      "sourceIds": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/id" } },
+      "sourceNote": { "type": "string" },
+      "factIds": { "$ref": "common.schema.json#/$defs/idList" }
+    }
+  }
+}

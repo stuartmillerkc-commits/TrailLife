@@ -1,0 +1,18 @@
+{
+  "description": "Which schema checks which content file. Paths are relative to /content; * matches one folder or file name. scripts/check-sources.js reads this file. .vscode/settings.json mirrors it so VS Code shows the same errors as you type (npm test fails if the two drift apart).",
+  "files": [
+    { "pattern": "modules/*.json", "schema": "module.schema.json" },
+    { "pattern": "sequences/*.json", "schema": "sequence.schema.json" },
+    { "pattern": "games/*.json", "schema": "game.schema.json" },
+    { "pattern": "facts/*.json", "schema": "fact.schema.json" },
+    { "pattern": "sources/sources.json", "schema": "source.schema.json" },
+    { "pattern": "images/manifest.json", "schema": "image.schema.json" },
+    { "pattern": "battles/*/battle.json", "schema": "battle.schema.json" },
+    { "pattern": "battles/*/strategic.json", "schema": "strategic.schema.json" },
+    { "pattern": "battles/*/units.json", "schema": "units.schema.json" },
+    { "pattern": "battles/*/phases.json", "schema": "phases.schema.json" },
+    { "pattern": "battles/*/patrolOrder.json", "schema": "patrol-order.schema.json" },
+    { "pattern": "battles/*/plans.json", "schema": "plans.schema.json" },
+    { "pattern": "battles/*/whatifs.json", "schema": "whatifs.schema.json" }
+  ]
+}

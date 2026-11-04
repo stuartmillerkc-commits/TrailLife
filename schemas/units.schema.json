@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "units.schema.json",
+  "title": "Units",
+  "description": "content/battles/<id>/units.json: every unit marker in the battle. PLAN.md section 8.7. Positions are not stored here; they're in phases.json.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["id", "side", "label", "type"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id", "description": "Prefix with the side, e.g. us-pickens-militia, gb-dragoons." },
+      "side": { "$ref": "common.schema.json#/$defs/side" },
+      "subgroup": { "$ref": "common.schema.json#/$defs/id", "description": "A subgroup id from battle.json sides[].subgroups." },
+      "label": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "Short marker label, e.g. “Pickens’s militia”." },
+      "type": {
+        "enum": ["infantry", "cavalry", "artillery", "airborne", "glider", "engineer", "headquarters", "other"],
+        "description": "Sets the map symbol: infantry X, cavalry slash, artillery dot (PLAN.md 8.5)."
+      },
+      "commander": { "type": "string" },
+      "strengthNote": { "type": "string", "description": "e.g. “about 50”. Put the figure in a fact and list it in factIds too." },
+      "frontage": { "type": "number", "minimum": 0, "description": "Width of the battle line in field units." },
+      "looseOrder": { "type": "boolean", "description": "Skirmishers: drawn as a dotted line." },
+      "labelPlacement": { "enum": ["above", "below"] },
+      "factIds": { "$ref": "common.schema.json#/$defs/idList" },
+      "sourceIds": { "$ref": "common.schema.json#/$defs/idList" }
+    }
+  }
+}

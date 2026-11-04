@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source.schema.json",
+  "title": "Source registry",
+  "description": "content/sources/sources.json: documents cited by id (sourceId / sourceIds) from facts, battles, phases, plans and what-ifs. Added in Phase 0; PLAN.md uses ids like \"csi-cowpens-staff-ride\" but didn't say where they live.",
+  "type": "array",
+  "items": { "$ref": "#/$defs/source" },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["id", "title", "url"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "title": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+        "author": { "type": "string" },
+        "publisher": { "type": "string" },
+        "year": { "type": "integer", "minimum": 1500, "maximum": 2100 },
+        "url": { "$ref": "common.schema.json#/$defs/url" },
+        "mirrorUrls": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/url" } },
+        "localFile": {
+          "type": "string",
+          "pattern": "^sources/[^/]+$",
+          "description": "Path to a downloaded copy inside /sources, e.g. sources/cowpens-staff-ride.pdf. The check warns if it's missing."
+        },
+        "license": {
+          "type": "string",
+          "enum": ["public-domain", "open-license", "copyrighted-link-only", "copyrighted-facts-only"],
+          "description": "public-domain: may redraw maps. copyrighted-link-only: link to it, never embed or trace (e.g. American Battlefield Trust maps). copyrighted-facts-only: use facts, paraphrased; no copying."
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

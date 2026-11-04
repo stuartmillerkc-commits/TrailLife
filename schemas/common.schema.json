@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "title": "Shared definitions",
+  "description": "Building blocks reused by the other schemas. Not applied to any file directly.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Lowercase words joined by hyphens, e.g. \"branch-space-force\". Unique within its kind."
+    },
+    "idList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/id" },
+      "uniqueItems": true
+    },
+    "isoDate": {
+      "type": "string",
+      "format": "date",
+      "description": "A date written YYYY-MM-DD, e.g. 2026-11-04."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "A full web address starting with https://."
+    },
+    "nonEmptyText": {
+      "type": "string",
+      "minLength": 1
+    },
+    "textList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nonEmptyText" }
+    },
+    "requirementNumber": {
+      "type": "string",
+      "pattern": "^([1-9]|1[0-9]|2[0-4])$",
+      "description": "A Military Heritage requirement number from 1 to 24, written as text: \"1\", not 1."
+    },
+    "requirementList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/requirementNumber" },
+      "uniqueItems": true
+    },
+    "inlineSource": {
+      "title": "inline source",
+      "type": "object",
+      "description": "A source written out in place. Use a sourceId instead when the same document is cited many times.",
+      "required": ["title", "url"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "$ref": "#/$defs/nonEmptyText" },
+        "url": { "$ref": "#/$defs/url" },
+        "publisher": { "type": "string" },
+        "location": { "type": "string", "description": "Where in the source: a page, map number or section." }
+      }
+    },
+    "point": {
+      "type": "array",
+      "description": "An [x, y] position in the battle's field units (see battle.json \"field\"). x grows to the right, y grows downward.",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "pointList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/point" },
+      "minItems": 2
+    },
+    "latLon": {
+      "type": "array",
+      "description": "[latitude, longitude] in decimal degrees.",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "side": {
+      "$ref": "#/$defs/id",
+      "description": "A side id from the battle's \"sides\" list, e.g. \"american\" or \"british\"."
+    },
+    "link": {
+      "type": "object",
+      "required": ["label", "url"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "$ref": "#/$defs/nonEmptyText" },
+        "url": { "$ref": "#/$defs/url" }
+      }
+    }
+  }
+}

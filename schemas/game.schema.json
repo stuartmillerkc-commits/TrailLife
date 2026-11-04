@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "game.schema.json",
+  "title": "Game",
+  "description": "One game's content (content/games/<id>.json). PLAN.md sections 6.5 and 7.3. Jeopardy is fully defined here; the other game types get their exact item shapes in Phase 3, but every item that states a fact must carry a factId.",
+  "type": "object",
+  "required": ["id", "type", "title"],
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "type": { "enum": ["jeopardy", "picture-id", "which-branch", "rank-ladder", "who-outranks", "branch-timeline", "holiday-calendar", "posse-comitatus"] },
+    "title": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+    "requirements": { "$ref": "common.schema.json#/$defs/requirementList" },
+    "leaderNote": { "type": "string" },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "clues"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+          "clues": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/jeopardyClue" } }
+        }
+      }
+    },
+    "finalJeopardy": {
+      "type": "object",
+      "required": ["category", "clue", "answer", "factId"],
+      "additionalProperties": false,
+      "properties": {
+        "category": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+        "clue": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+        "answer": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+        "factId": { "$ref": "common.schema.json#/$defs/id" }
+      }
+    },
+    "items": {
+      "type": "array",
+      "description": "For non-Jeopardy games. Shape per game type is settled in Phase 3.",
+      "items": { "type": "object" }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "type": { "const": "jeopardy" } } },
+      "then": { "required": ["categories"] }
+    }
+  ],
+  "$defs": {
+    "jeopardyClue": {
+      "type": "object",
+      "required": ["value", "clue", "answer", "factId"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "integer", "minimum": 100 },
+        "clue": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+        "answer": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "Phrased as a question: “What is the Space Force?”" },
+        "factId": { "$ref": "common.schema.json#/$defs/id", "description": "Required: every clue maps to a sourced fact." },
+        "dailyDouble": { "type": "boolean" }
+      }
+    }
+  }
+}
