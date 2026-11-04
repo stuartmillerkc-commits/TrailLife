@@ -1,0 +1,15 @@
+[
+  {
+    "id": "red-waits",
+    "title": "What if Red waited?",
+    "forkPhase": 1,
+    "change": "Red rests and scouts first.",
+    "confidence": "likely",
+    "reasoning": ["Blue’s plan needed a fast attack.", "Scouts might have found the hidden horse."],
+    "reasoningSourceIds": ["example-source"],
+    "phases": [
+      { "title": "Red scouts", "time": "08:00", "narration": "Red’s scouts find the horse.", "units": { "red-line": { "position": [300, 700] } } }
+    ],
+    "discussion": "Fast and tired, or slow and rested?"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "index": 0,
+    "time": "Night",
+    "date": "January 1, 2000",
+    "title": "Blue waits",
+    "narration": "Blue forms on the ridge.",
+    "units": {
+      "blue-line": { "position": [300, 150] },
+      "blue-horse": { "position": [470, 40] },
+      "red-line": { "position": [300, 980], "status": "gone" },
+      "red-guns": { "position": [340, 980], "status": "gone" }
+    },
+    "planArrows": [{ "label": "Planned fallback", "path": [[300, 150], [300, 60]] }],
+    "hiddenFrom": { "red": ["blue-horse"] },
+    "leaderNotes": { "discussion": "Why hide the horse?", "captureTheFlag": "Keep one fast player back." },
+    "sourceIds": ["example-source"],
+    "sourceNote": "Example source, map 1."
+  },
+  {
+    "index": 1,
+    "time": "07:00",
+    "clockTime": "2000-01-01T07:00",
+    "date": "January 1, 2000",
+    "title": "Red arrives",
+    "narration": "Red comes out of the woods.",
+    "units": {
+      "red-line": { "position": [300, 790], "status": "normal" },
+      "red-guns": { "position": [340, 760], "status": "normal" }
+    },
+    "movements": [{ "side": "red", "unitId": "red-line", "path": [[300, 900], [300, 800]] }],
+    "fireLines": [{ "from": [340, 760], "to": [300, 160] }],
+    "hiddenFrom": { "red": ["blue-horse"] },
+    "decisionPoint": {
+      "side": "red",
+      "who": "You’re Red.",
+      "prompt": "Attack now or wait?",
+      "choices": ["Attack now", "Wait"],
+      "teaser": "Red sees Blue on the ridge.",
+      "holdMapUntilReveal": false,
+      "historicalOutcome": "In this made-up battle, Red attacked."
+    },
+    "sourceIds": ["example-source"],
+    "estimatedPositions": ["red-guns"]
+  }
+]

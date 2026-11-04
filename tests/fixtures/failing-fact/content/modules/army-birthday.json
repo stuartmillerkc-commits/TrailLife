@@ -1,0 +1,10 @@
+{
+  "id": "army-birthday",
+  "title": "Army birthday",
+  "requirements": ["1"],
+  "durationMinutes": 2,
+  "activityType": ["discussion"],
+  "displayContent": { "headline": "When was the Army founded?" },
+  "reveal": { "type": "text", "factIds": ["branch-army-founded"] },
+  "factIds": ["branch-army-founded"]
+}

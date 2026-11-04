@@ -1,0 +1,6 @@
+[
+  { "id": "blue-line", "side": "blue", "label": "Blue line", "type": "infantry", "frontage": 200 },
+  { "id": "blue-horse", "side": "blue", "subgroup": "blue-reserve", "label": "Blue horse", "type": "cavalry", "frontage": 60 },
+  { "id": "red-line", "side": "red", "label": "Red line", "type": "infantry", "frontage": 240 },
+  { "id": "red-guns", "side": "red", "label": "Red guns", "type": "artillery", "frontage": 30, "labelPlacement": "above" }
+]

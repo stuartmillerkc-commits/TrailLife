@@ -1,0 +1,17 @@
+{
+  "name": "military-heritage",
+  "version": "0.0.1",
+  "description": "Lesson site for the Trail Life USA Military Heritage Trail Badge, Troop MO-8605",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node scripts/build-content-index.js && node scripts/serve.js",
+    "check": "node scripts/check-sources.js",
+    "check:strict": "node scripts/check-sources.js --strict",
+    "check:failing": "node scripts/check-sources.js --content tests/fixtures/failing-fact/content",
+    "index": "node scripts/build-content-index.js",
+    "build": "node scripts/build-content-index.js && node scripts/check-sources.js && node scripts/build-single-file.js",
+    "test": "node --test \"tests/*.test.js\""
+  }
+}

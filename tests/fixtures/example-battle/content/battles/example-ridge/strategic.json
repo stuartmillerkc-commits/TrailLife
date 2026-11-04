@@ -1,0 +1,14 @@
+{
+  "bounds": { "west": -82.6, "east": -79.4, "north": 35.6, "south": 32.6 },
+  "title": "Why here?",
+  "clockLabel": "Jan 2000",
+  "narration": "Blue picks ground that its friends can find.",
+  "leaderNotes": { "discussion": "What did Blue gain?" },
+  "places": [{ "name": "Example Ridge", "at": [35.13, -81.82], "isBattle": true, "labelOffset": [-10, -14], "labelAnchor": "end" }],
+  "rivers": [{ "name": "Example River", "path": [[35.3, -81.9], [34.9, -81.5]], "labelAt": [35.0, -81.6] }],
+  "borders": [{ "label": "State line", "path": [[35.2, -82.6], [35.2, -81.0]] }],
+  "regionLabels": [{ "text": "North", "at": [35.4, -82.3] }],
+  "campaignArrows": [{ "side": "red", "label": "Red", "path": [[34.5, -81.9], [35.1, -81.8]] }],
+  "sourceIds": ["example-source"],
+  "approximateNote": "Schematic; places approximate."
+}

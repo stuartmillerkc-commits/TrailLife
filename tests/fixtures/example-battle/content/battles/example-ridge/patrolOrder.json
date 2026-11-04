@@ -1,0 +1,19 @@
+[
+  {
+    "battleId": "example-ridge",
+    "side": "blue",
+    "commander": "Blue commander",
+    "title": "Blue’s plan as a patrol order",
+    "situation": "Red attacks head-on.",
+    "mission": "Hold the ridge.",
+    "commandersIntent": "Let Red think it’s winning.",
+    "roles": [
+      { "role": "Anchor", "who": "Blue line", "task": "Hold the ridge." },
+      { "role": "Hidden strike", "who": "Blue horse" }
+    ],
+    "signals": "Everyone knows the fallback route.",
+    "closingPrompt": "Now write yours.",
+    "note": "Made-up test data. Not a historical document.",
+    "sourceIds": ["example-source"]
+  }
+]
