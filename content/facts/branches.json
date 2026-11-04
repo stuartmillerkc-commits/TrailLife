@@ -1,0 +1,25 @@
+[
+  {
+    "id": "branch-space-force",
+    "statement": "The Space Force, one of the six U.S. armed forces, was established on December 20, 2019, when the National Defense Authorization Act for Fiscal Year 2020 became law.",
+    "source": {
+      "title": "United States Space Force",
+      "url": "https://en.wikipedia.org/wiki/United_States_Space_Force",
+      "publisher": "Wikipedia",
+      "location": "Lead section"
+    },
+    "corroboratingSources": [
+      {
+        "title": "Public Law 116-92, National Defense Authorization Act for Fiscal Year 2020",
+        "url": "https://www.govinfo.gov/app/details/PLAW-116publ92",
+        "publisher": "U.S. Government Publishing Office",
+        "location": "Approved December 20, 2019"
+      }
+    ],
+    "verifiedOn": "2026-11-04",
+    "disagreement": null,
+    "requirements": ["1"],
+    "tags": ["branches"],
+    "leaderNote": "PLAN.md cites spaceforce.mil for this fact; that site blocks automated checks, so it wasn’t re-read on 2026-11-04. Worth a manual look."
+  }
+]
