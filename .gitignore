@@ -1,0 +1,12 @@
+# Build output: regenerate with `npm run build`
+dist/
+
+# Dependencies (the project has none today, but just in case)
+node_modules/
+
+# Editor and OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp

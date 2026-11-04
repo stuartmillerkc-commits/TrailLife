@@ -1,0 +1,12 @@
+# Store text with Unix line endings so Windows and Mac editors agree.
+* text=auto eol=lf
+
+# Binary files: never touch line endings or try to diff them.
+*.pdf binary
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.zip binary
