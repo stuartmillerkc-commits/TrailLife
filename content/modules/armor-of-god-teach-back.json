@@ -1,0 +1,64 @@
+{
+  "id": "armor-of-god-teach-back",
+  "title": "Armor of God and teach-back",
+  "requirements": ["23"],
+  "durationMinutes": 9,
+  "activityType": ["devotional", "hands-on", "discussion"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Bible", "Paper labels or real gear: belt, vest, boots, trash-can-lid shield, helmet, foam sword"],
+  "printables": [],
+  "displayContent": {
+    "headline": "The armor of God",
+    "body": "Ephesians 6:13–17. As each piece goes on, match it to what it stands for.",
+    "images": []
+  },
+  "promptLabel": "Question",
+  "prompts": [
+    {
+      "text": "Which piece matters most? Defend your answer.",
+      "answer": "No single right answer. Two points worth raising: the sword is the only piece for attacking, and Roman soldiers could lock their shields together, so faith works best in a group.",
+      "factIds": ["ephesians-armor", "roman-shield-formation"]
+    },
+    {
+      "text": "What does Paul say to do right after putting on the armor?",
+      "answer": "Pray at all times (verse 18), like a soldier’s radio back to headquarters.",
+      "factIds": ["ephesians-prayer"]
+    },
+    {
+      "text": "Teach it back: pick one thing from tonight and explain it to the group in 30 seconds.",
+      "answer": "Leader: note which boys can explain which items for the mentor.",
+      "factIds": ["ephesians-armor"]
+    }
+  ],
+  "leaderScript": [
+    "Read Ephesians 6:13–17 while a volunteer is “suited up” with paper labels or real gear.",
+    "Press → for the answer key and R to show it.",
+    "Press → for the discussion question. Make each boy defend his answer.",
+    "Press → for verse 18, then → for the teach-back."
+  ],
+  "discussionQuestions": [],
+  "reveal": {
+    "type": "table",
+    "title": "The armor of God",
+    "afterPrompt": 0,
+    "table": {
+      "columns": ["Gear", "Stands for"],
+      "rows": [
+        { "cells": ["Belt", "Truth"], "factIds": ["ephesians-armor"] },
+        { "cells": ["Breastplate (body armor)", "Righteousness"], "factIds": ["ephesians-armor"] },
+        { "cells": ["Shoes (boots)", "The gospel of peace"], "factIds": ["ephesians-armor"] },
+        { "cells": ["Shield", "Faith"], "factIds": ["ephesians-armor"] },
+        { "cells": ["Helmet", "Salvation"], "factIds": ["ephesians-armor"] },
+        { "cells": ["Sword", "The Spirit: the word of God"], "factIds": ["ephesians-armor"] }
+      ]
+    }
+  },
+  "factIds": ["ephesians-armor", "ephesians-prayer", "roman-shield-formation"],
+  "moreInfo": [
+    { "label": "Ephesians 6:10–18 (Bible Gateway)", "url": "https://www.biblegateway.com/passage/?search=Ephesians+6%3A10-18&version=ESV" }
+  ],
+  "ifShortOnTime": "Skip the suit-up: show the answer key, ask which piece matters most, and do the teach-back.",
+  "lowVolunteerNote": "One leader is enough.",
+  "linkedGames": []
+}

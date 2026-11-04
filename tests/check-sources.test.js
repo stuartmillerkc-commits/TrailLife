@@ -15,11 +15,13 @@ const fixture = (name) => path.join(REPO_ROOT, "tests", "fixtures", name, "conte
 const messagesOf = (items) => items.map(({ where, message }) => `${where}: ${message}`).join("\n");
 
 // Copies a fixture to a temporary folder, lets the test change one file, runs the check, cleans up.
+// Pass "real" as the fixture name to copy the site's own /content instead.
 function checkModifiedCopy(fixtureName, relativeFile, change, options = {}) {
   const temporaryRoot = mkdtempSync(path.join(os.tmpdir(), "mh-check-"));
   const contentDirectory = path.join(temporaryRoot, "content");
+  const sourceDirectory = fixtureName === "real" ? path.join(REPO_ROOT, "content") : fixture(fixtureName);
   try {
-    cpSync(fixture(fixtureName), contentDirectory, { recursive: true });
+    cpSync(sourceDirectory, contentDirectory, { recursive: true });
     const filePath = path.join(contentDirectory, relativeFile);
     const data = JSON.parse(readFileSync(filePath, "utf8"));
     writeFileSync(filePath, JSON.stringify(change(data) ?? data));
@@ -130,6 +132,34 @@ test("invalid JSON fails with the file name", () => {
   } finally {
     rmSync(temporaryRoot, { recursive: true, force: true });
   }
+});
+
+test("a prompt without factIds fails", () => {
+  const result = checkModifiedCopy("real", "modules/academy-run-and-sort.json", (module) => { delete module.prompts[0].factIds; });
+  assert.match(messagesOf(result.errors), /prompt 1 \("Ulysses S. Grant"\) has no factIds/);
+});
+
+test("an answer-key row without factIds fails", () => {
+  const result = checkModifiedCopy("real", "modules/branch-timeline-race.json", (module) => { delete module.reveal.table.rows[0].factIds; });
+  assert.match(messagesOf(result.errors), /answer-key row 1 .* has no factIds/);
+});
+
+test("an answer-key row with the wrong number of cells fails", () => {
+  const result = checkModifiedCopy("real", "modules/branch-timeline-race.json", (module) => { module.reveal.table.rows[0].cells.pop(); });
+  assert.match(messagesOf(result.errors), /one cell per column/);
+});
+
+test("reveal.afterPrompt past the last prompt fails", () => {
+  const result = checkModifiedCopy("real", "modules/rank-ladder-race.json", (module) => { module.reveal.afterPrompt = 9; });
+  assert.match(messagesOf(result.errors), /afterPrompt is 9, but the module has 2 prompt/);
+});
+
+test("a projector answer resting on an unverified fact gets a warning", () => {
+  const result = checkModifiedCopy("real", "facts/branches.json", (facts) => {
+    const fact = facts.find((record) => record.id === "branch-army-founded");
+    fact.needsVerification = true;
+  });
+  assert.match(messagesOf(result.warnings), /branch-timeline-race.*unverified fact "branch-army-founded"/);
 });
 
 test("VS Code's schema settings match schemas/schema-map.json", () => {

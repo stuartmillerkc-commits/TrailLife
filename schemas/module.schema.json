@@ -78,6 +78,11 @@
       "properties": {
         "type": { "enum": ["table", "list", "text", "image"] },
         "title": { "type": "string", "description": "Optional heading above the answer key." },
+        "afterPrompt": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Only for modules with prompts: where the answer key appears. 0 = right after the opening screen, 2 = after prompt 2. Leave it out to put the answer key after the last prompt. Without prompts, the answer key belongs to the opening screen."
+        },
         "text": { "type": "string", "description": "For type \"text\"." },
         "items": { "$ref": "common.schema.json#/$defs/textList", "description": "For type \"list\"." },
         "table": {

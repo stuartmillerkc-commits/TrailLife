@@ -1,0 +1,16 @@
+{
+  "id": "meeting-1-who-serves",
+  "title": "Meeting 1 — Who Serves",
+  "totalMinutes": 75,
+  "steps": [
+    { "moduleId": "opener-five-or-six", "minutes": 5 },
+    { "moduleId": "branch-timeline-race", "minutes": 15 },
+    { "moduleId": "academy-run-and-sort", "minutes": 12 },
+    { "moduleId": "floor-calendar-gi-bill", "minutes": 15 },
+    { "moduleId": "tomb-guard-walk", "minutes": 10 },
+    { "moduleId": "veteran-guest-qa", "minutes": 13, "optional": true },
+    { "moduleId": "teach-back-prayer", "minutes": 5 }
+  ],
+  "author": "Leader guide (Arandur), converted in Phase 1",
+  "notes": "Covers Requirements 1, 2, 5, 10, 11, and optionally 7. Everything runs patrol against patrol for points; the losing patrol stacks chairs. Run it before Veterans Day (Wednesday, November 11) so attending a ceremony is a natural follow-on."
+}

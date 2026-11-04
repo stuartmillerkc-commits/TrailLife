@@ -1,0 +1,72 @@
+{
+  "id": "academy-run-and-sort",
+  "title": "Academy run-and-sort",
+  "requirements": ["2"],
+  "durationMinutes": 12,
+  "activityType": ["competition", "hands-on"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Three wall signs: each academy’s name, founding year, location and branch", "Room to run between the walls"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Which academy?",
+    "body": "Listen to the name. Run to the wall of the academy you think he graduated from. Your patrol scores when most of you pick right.",
+    "points": ["West Point: U.S. Military Academy", "Annapolis: U.S. Naval Academy", "Colorado Springs: U.S. Air Force Academy"],
+    "images": []
+  },
+  "promptLabel": "Graduate",
+  "prompts": [
+    { "text": "Ulysses S. Grant", "answer": "West Point (Army), class of 1843", "factIds": ["grad-grant"] },
+    { "text": "Chester Nimitz", "answer": "Naval Academy (Navy), class of 1905", "factIds": ["grad-nimitz"] },
+    { "text": "Lance Sijan", "answer": "Air Force Academy, class of 1965: its first graduate to receive the Medal of Honor", "factIds": ["grad-sijan"] },
+    { "text": "Robert E. Lee", "answer": "West Point (Army), class of 1829", "factIds": ["grad-lee"] },
+    { "text": "Jimmy Carter", "answer": "Naval Academy (Navy), class of 1947", "factIds": ["grad-carter"] },
+    { "text": "Douglas MacArthur", "answer": "West Point (Army), class of 1903", "factIds": ["grad-macarthur"] },
+    { "text": "Chesley “Sully” Sullenberger", "answer": "Air Force Academy, class of 1973: the pilot who landed his airliner on the Hudson River", "factIds": ["grad-sullenberger"] },
+    { "text": "Alan Shepard", "answer": "Naval Academy (Navy), class of 1945", "factIds": ["grad-shepard"] },
+    { "text": "Dwight D. Eisenhower", "answer": "West Point (Army), class of 1915", "factIds": ["grad-eisenhower"] },
+    { "text": "Jim Lovell", "answer": "Naval Academy (Navy), class of 1952", "factIds": ["grad-lovell"] },
+    { "text": "George S. Patton", "answer": "West Point (Army), class of 1909", "factIds": ["grad-patton"] },
+    { "text": "Buzz Aldrin", "answer": "West Point (Army), class of 1951. The Army’s academy produced the second man on the Moon.", "factIds": ["grad-aldrin"] },
+    { "text": "Gregg Popovich", "answer": "Air Force Academy, class of 1970. The Air Force’s academy produced a famous NBA coach.", "factIds": ["grad-popovich"] },
+    { "text": "Bonus point: name the other two federal service academies.", "answer": "The Coast Guard Academy in New London, Connecticut, and the Merchant Marine Academy in Kings Point, New York.", "factIds": ["academy-coast-guard", "academy-merchant-marine"] }
+  ],
+  "leaderScript": [
+    "Before the meeting, post the three wall signs.",
+    "Press → to show each name. Boys run to a wall; a patrol scores when most of its members picked right.",
+    "Press R to show the answer, then → for the next name.",
+    "Aldrin and Popovich come last on purpose: a moonwalker from the Army’s academy and an NBA coach from the Air Force’s make good arguments.",
+    "Finish with the bonus question, then the answer key."
+  ],
+  "discussionQuestions": [
+    {
+      "question": "Why would the Naval Academy commission Marines as well as Navy officers?",
+      "answer": "The Marine Corps is part of the Department of the Navy.",
+      "factIds": ["branch-marines-role", "academy-naval"]
+    }
+  ],
+  "reveal": {
+    "type": "table",
+    "title": "The three academies",
+    "table": {
+      "columns": ["Academy", "Founded", "Location", "Commissions into"],
+      "rows": [
+        { "cells": ["U.S. Military Academy (West Point)", "1802", "West Point, NY", "Army"], "factIds": ["academy-west-point"] },
+        { "cells": ["U.S. Naval Academy", "1845", "Annapolis, MD", "Navy, Marine Corps"], "factIds": ["academy-naval"] },
+        { "cells": ["U.S. Air Force Academy", "1954", "Colorado Springs, CO", "Air Force, Space Force"], "factIds": ["academy-air-force"] }
+      ]
+    }
+  },
+  "factIds": [
+    "academy-west-point", "academy-naval", "academy-air-force", "academy-coast-guard", "academy-merchant-marine",
+    "grad-grant", "grad-lee", "grad-macarthur", "grad-eisenhower", "grad-patton", "grad-aldrin",
+    "grad-nimitz", "grad-carter", "grad-shepard", "grad-lovell", "grad-sijan", "grad-sullenberger", "grad-popovich",
+    "branch-marines-role"
+  ],
+  "moreInfo": [
+    { "label": "United States service academies (Wikipedia)", "url": "https://en.wikipedia.org/wiki/United_States_service_academies" }
+  ],
+  "ifShortOnTime": "Read six names: Grant, Nimitz, Sijan, Lee, then Aldrin and Popovich. Skip the bonus.",
+  "lowVolunteerNote": "With two leaders, run this and the floor calendar as side-by-side stations and swap patrols at 0:40.",
+  "linkedGames": []
+}

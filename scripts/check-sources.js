@@ -192,6 +192,19 @@ export function runCheck({ contentDirectory = DEFAULT_CONTENT_DIRECTORY, strict 
     if (module.reveal?.table && module.reveal.table.rows.some((row) => row.cells.length !== module.reveal.table.columns.length)) {
       addError(`${where} (module "${moduleId}")`, "every answer-key row needs one cell per column.");
     }
+    const afterPrompt = module.reveal?.afterPrompt;
+    if (afterPrompt !== undefined && (!module.prompts?.length || afterPrompt > module.prompts.length)) {
+      addError(`${where} (module "${moduleId}")`, `reveal.afterPrompt is ${afterPrompt}, but the module has ${module.prompts?.length || 0} prompt(s). Use 0 to ${module.prompts?.length || 0}, or remove it.`);
+    }
+    // Anything on the projector that rests on an unverified fact gets a warning, so a leader can decide before the meeting.
+    const projectorFactIds = [
+      ...(module.prompts || []).flatMap((prompt) => prompt.factIds || []),
+      ...(module.reveal?.factIds || []),
+      ...(module.reveal?.table?.rows || []).flatMap((row) => row.factIds || [])
+    ];
+    [...new Set(projectorFactIds)].filter((factId) => facts.get(factId)?.record.needsVerification).forEach((factId) => {
+      addWarning(`${where} (module "${moduleId}")`, `shows an answer on the projector that rests on unverified fact "${factId}".`);
+    });
   }
   for (const [sequenceId, { record: sequence, where }] of sequences) {
     const stepMinutes = (sequence.steps || []).reduce((total, step) => total + (step.minutes || 0), 0);

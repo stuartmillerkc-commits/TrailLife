@@ -1,0 +1,83 @@
+{
+  "id": "floor-calendar-gi-bill",
+  "title": "Floor calendar and GI Bill story",
+  "requirements": ["5", "11"],
+  "durationMinutes": 15,
+  "activityType": ["competition", "hands-on", "discussion"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Painter’s tape for a 12-month floor grid", "Holiday cards and origin cards, one set per patrol"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Build the calendar",
+    "body": "Put each holiday card on the right month. Then match each holiday to its origin card.",
+    "images": []
+  },
+  "promptLabel": "Question",
+  "prompts": [
+    {
+      "text": "What’s the difference between Memorial Day and Veterans Day?",
+      "answer": "Memorial Day honors those who died in service. Veterans Day thanks everyone who served, living or dead. (Armed Forces Day honors those serving now.)",
+      "factIds": ["holiday-memorial-day", "holiday-veterans-day", "holiday-armed-forces-day"]
+    },
+    {
+      "text": "Which of these days are federal holidays?",
+      "answer": "Only two: Memorial Day and Veterans Day. The rest are observances, not days off.",
+      "factIds": ["holiday-federal-list"]
+    },
+    {
+      "text": "The GI Bill, 1944: how might your grandparents’ or great-grandparents’ lives have been different without it?",
+      "answer": "It paid for about 2.3 million veterans to go to college and backed 4.3 million home loans by 1955.",
+      "factIds": ["gi-bill-signed", "gi-bill-benefits", "gi-bill-effects"]
+    }
+  ],
+  "leaderScript": [
+    "Tape a 12-month grid on the floor before the meeting.",
+    "Patrols place the holiday cards on the right months, then match each to an origin card.",
+    "Press → for the answer key and R to show it while you score.",
+    "Press → for the key question: Memorial Day versus Veterans Day. Drill the answer until they can say it back.",
+    "Close the station with a two-minute GI Bill story: President Roosevelt signed it on June 22, 1944. It paid for college or job training, helped veterans buy homes, and gave unemployment pay. Then ask the question on screen.",
+    "Trivia if there’s time: Veterans Day moved to the fourth Monday in October in 1971. People didn’t like it, and it went back to November 11 in 1978."
+  ],
+  "discussionQuestions": [
+    {
+      "question": "Why is Veterans Day on November 11?",
+      "answer": "It began as Armistice Day: World War I’s fighting stopped at the eleventh hour of the eleventh day of the eleventh month of 1918. Congress made it a legal holiday in 1938 and renamed it Veterans Day in 1954.",
+      "factIds": ["holiday-armistice-1918", "holiday-armistice-day-1938", "holiday-veterans-day-1954"]
+    },
+    {
+      "question": "What’s today’s version of the GI Bill?",
+      "answer": "The Post-9/11 GI Bill, which helps veterans pay for school or job training.",
+      "factIds": ["gi-bill-post-911"]
+    }
+  ],
+  "reveal": {
+    "type": "table",
+    "title": "Answer key: military holidays and observances",
+    "afterPrompt": 0,
+    "table": {
+      "columns": ["Day", "When", "Honors", "Origin"],
+      "rows": [
+        { "cells": ["Memorial Day (federal holiday)", "Last Monday in May", "Those who died in service", "Decoration Day: Gen. John A. Logan’s order set May 30, 1868; moved to a Monday in 1971"], "factIds": ["holiday-memorial-day", "holiday-memorial-day-origin", "holiday-memorial-day-monday"] },
+        { "cells": ["Veterans Day (federal holiday)", "November 11", "All who served, living or dead", "Armistice Day, for the end of World War I’s fighting in 1918; legal holiday 1938; renamed 1954"], "factIds": ["holiday-veterans-day", "holiday-armistice-1918", "holiday-armistice-day-1938", "holiday-veterans-day-1954"] },
+        { "cells": ["Armed Forces Day", "Third Saturday in May", "Those serving now", "First held in 1950 to replace each branch’s separate day; not a day off"], "factIds": ["holiday-armed-forces-day", "holiday-federal-list"] },
+        { "cells": ["National POW/MIA Recognition Day", "Third Friday in September", "Prisoners of war and the missing", "Observance, not a holiday"], "factIds": ["holiday-pow-mia", "holiday-federal-list"] },
+        { "cells": ["Gold Star Mother’s and Family’s Day", "Last Sunday in September", "Families who lost a service member", "Observance, not a holiday"], "factIds": ["holiday-gold-star", "holiday-federal-list"] },
+        { "cells": ["Pearl Harbor Remembrance Day", "December 7", "Americans killed at Pearl Harbor, 1941", "Created by Congress in 1994; observance, not a holiday"], "factIds": ["holiday-pearl-harbor", "holiday-federal-list"] }
+      ]
+    }
+  },
+  "factIds": [
+    "holiday-memorial-day", "holiday-memorial-day-origin", "holiday-memorial-day-monday", "holiday-veterans-day",
+    "holiday-armistice-1918", "holiday-armistice-day-1938", "holiday-veterans-day-1954", "holiday-veterans-day-october",
+    "holiday-veterans-day-returned", "holiday-armed-forces-day", "holiday-pow-mia", "holiday-gold-star",
+    "holiday-pearl-harbor", "holiday-federal-list", "gi-bill-signed", "gi-bill-benefits", "gi-bill-effects", "gi-bill-post-911"
+  ],
+  "moreInfo": [
+    { "label": "Veterans Day history (govinfo)", "url": "https://www.govinfo.gov/features/veterans-day" },
+    { "label": "Servicemen’s Readjustment Act (National Archives)", "url": "https://www.archives.gov/milestone-documents/servicemens-readjustment-act" }
+  ],
+  "ifShortOnTime": "Skip the origin cards: place holidays on months only, then go straight to the Memorial Day versus Veterans Day question. Keep the GI Bill story to one minute.",
+  "lowVolunteerNote": "With two leaders, run this and the academy sort as side-by-side stations and swap patrols at 0:40.",
+  "linkedGames": []
+}

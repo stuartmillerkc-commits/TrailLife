@@ -1,0 +1,79 @@
+{
+  "id": "rank-ladder-race",
+  "title": "Rank ladder race",
+  "requirements": ["20"],
+  "durationMinutes": 12,
+  "activityType": ["competition", "hands-on"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Army insignia cards per patrol: enlisted (E-1 to E-9) and officer (O-1 to O-10)", "Tape"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Rank ladder race",
+    "body": "Tape the insignia cards on the wall in order, lowest to highest. Two ladders: enlisted E-1 to E-9, and officers O-1 to O-10.",
+    "images": []
+  },
+  "promptLabel": "Question",
+  "prompts": [
+    {
+      "text": "Gold or silver: which ranks higher?",
+      "answer": "Silver. A second lieutenant’s gold bar is below a first lieutenant’s silver bar, and a major’s gold oak leaf is below a lieutenant colonel’s silver oak leaf.",
+      "factIds": ["rank-gold-below-silver"]
+    },
+    {
+      "text": "What’s the difference between an officer and a sergeant?",
+      "answer": "Officers hold a commission (from an academy, ROTC or officer school), need a college degree, and plan and lead. NCOs are enlisted soldiers who rose through the ranks; they train and lead soldiers day to day.",
+      "factIds": ["rank-officers-role", "rank-ncos-role"]
+    }
+  ],
+  "leaderScript": [
+    "Each patrol races to tape both ladders on the wall.",
+    "Press → for the answer key and R to show it while you score.",
+    "Press → for the gotcha question everyone misses: gold ranks below silver.",
+    "Press → for officers versus NCOs.",
+    "Ask: in our troop, who’s more like an officer, and who’s more like a sergeant?",
+    "If a boy asks about warrant officers: W-1 to W-5 are technical experts, ranked above enlisted soldiers and below second lieutenants."
+  ],
+  "discussionQuestions": [
+    {
+      "question": "In our troop, who’s more like an officer, and who’s more like a sergeant?",
+      "answer": "Open question; there’s no answer key."
+    }
+  ],
+  "reveal": {
+    "type": "table",
+    "title": "Army ranks, lowest to highest",
+    "afterPrompt": 0,
+    "table": {
+      "columns": ["Pay grade", "Rank", "Insignia"],
+      "rows": [
+        { "cells": ["E-1", "Private", "None"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["E-2", "Private", "1 chevron"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["E-3", "Private First Class", "1 chevron + 1 rocker"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["E-4", "Specialist / Corporal", "Eagle on a shield shape / 2 chevrons"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["E-5", "Sergeant", "3 chevrons"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["E-6", "Staff Sergeant", "3 chevrons + 1 rocker"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["E-7", "Sergeant First Class", "3 chevrons + 2 rockers"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["E-8", "Master Sergeant / First Sergeant", "3 chevrons + 3 rockers / same with a diamond"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["E-9", "Sergeant Major / Command Sergeant Major", "Same with a star / star in a wreath"], "factIds": ["rank-army-enlisted-order", "rank-army-enlisted-insignia"] },
+        { "cells": ["O-1", "Second Lieutenant", "1 gold bar"], "factIds": ["rank-army-officer-insignia"] },
+        { "cells": ["O-2", "First Lieutenant", "1 silver bar"], "factIds": ["rank-army-officer-insignia"] },
+        { "cells": ["O-3", "Captain", "2 silver bars"], "factIds": ["rank-army-officer-insignia"] },
+        { "cells": ["O-4", "Major", "Gold oak leaf"], "factIds": ["rank-army-officer-insignia"] },
+        { "cells": ["O-5", "Lieutenant Colonel", "Silver oak leaf"], "factIds": ["rank-army-officer-insignia"] },
+        { "cells": ["O-6", "Colonel", "Silver eagle"], "factIds": ["rank-army-officer-insignia"] },
+        { "cells": ["O-7 to O-10", "Brigadier, Major, Lieutenant General, General", "1 to 4 stars"], "factIds": ["rank-army-officer-insignia"] }
+      ]
+    }
+  },
+  "factIds": [
+    "rank-army-enlisted-order", "rank-army-enlisted-insignia", "rank-army-officer-insignia", "rank-gold-below-silver",
+    "rank-warrant-officers", "rank-officers-role", "rank-ncos-role"
+  ],
+  "moreInfo": [
+    { "label": "U.S. Army ranks (army.mil)", "url": "https://www.army.mil/ranks/" }
+  ],
+  "ifShortOnTime": "This is the first block to cut: capture the flag needs its full 30 minutes. If you keep it, race the officer ladder only.",
+  "lowVolunteerNote": "One leader is enough.",
+  "linkedGames": []
+}

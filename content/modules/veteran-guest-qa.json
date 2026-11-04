@@ -1,0 +1,29 @@
+{
+  "id": "veteran-guest-qa",
+  "title": "Veteran guest Q&A",
+  "requirements": ["7"],
+  "durationMinutes": 13,
+  "activityType": ["guest", "discussion"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Each boy’s two written questions", "Paper and pencil for each boy to record answers"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Ask a veteran",
+    "body": "Ask your own questions. Write the answers in your own words for your mentor.",
+    "points": ["Why did you join, or were you drafted?", "What did you expect?", "How was it different from what you expected?"],
+    "images": []
+  },
+  "leaderScript": [
+    "Before the meeting, have each boy write two questions that cover the badge’s three: why the veteran joined or was drafted, what he expected, and how reality was different.",
+    "Introduce the guest and let the boys take turns asking.",
+    "Each boy records the answers in his own words. Whether this counts for the interview requirement is the mentor’s call.",
+    "No guest? Use the time to plan which Veterans Day event the group will attend (Wednesday, November 11, 2026)."
+  ],
+  "discussionQuestions": [],
+  "factIds": ["holiday-veterans-day-2026"],
+  "moreInfo": [],
+  "ifShortOnTime": "This step is optional and is skipped when Short on time is on.",
+  "lowVolunteerNote": "Needs only the guest and one leader.",
+  "linkedGames": []
+}

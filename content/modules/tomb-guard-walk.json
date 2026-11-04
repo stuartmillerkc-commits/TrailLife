@@ -1,0 +1,55 @@
+{
+  "id": "tomb-guard-walk",
+  "title": "Tomb Guard walk",
+  "requirements": ["10"],
+  "durationMinutes": 10,
+  "activityType": ["presentation", "hands-on"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Painter’s tape for a 21-step line", "A phone stopwatch"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Arlington National Cemetery",
+    "points": [
+      "Built on the Arlington estate of Robert E. Lee’s wife’s family",
+      "First military burial: May 13, 1864",
+      "Tomb of the Unknown Soldier: November 11, 1921",
+      "Guarded every minute since July 2, 1937"
+    ],
+    "images": []
+  },
+  "promptLabel": "Step",
+  "prompts": [
+    {
+      "text": "Walk the guard’s pattern: 21 steps. Face east, 21 seconds. Face north, 21 seconds. Turn. 21 steps back.",
+      "answer": "That’s the real pattern. The 21 stands for the 21-gun salute, the highest military honor.",
+      "factIds": ["arlington-sentinel-walk"]
+    },
+    {
+      "text": "Why guard a grave when no one knows who’s in it?",
+      "answer": "No single right answer; let them argue it. The soldier buried there is from World War I and has never been identified.",
+      "factIds": ["arlington-tomb-1921"]
+    }
+  ],
+  "leaderScript": [
+    "Tell Arlington’s story in three minutes using the points on screen:",
+    "The land was the Arlington estate of Robert E. Lee’s wife’s family. The Army took it over in May 1861.",
+    "The first military burial was Pvt. William Christman of the 67th Pennsylvania, on May 13, 1864. He died of illness, not in battle.",
+    "The Tomb of the Unknown Soldier was dedicated November 11, 1921, for an unknown soldier from World War I. It has been guarded every minute since July 2, 1937, and by the 3rd U.S. Infantry, “The Old Guard,” since 1948.",
+    "Nearly 430,000 veterans and family members are buried there.",
+    "Press → to show the walk. Each boy walks it while a judge from the other patrol counts and watches for fidgeting.",
+    "Press R for why it’s 21. Then → for the closing question."
+  ],
+  "discussionQuestions": [],
+  "factIds": [
+    "arlington-custis-lee-estate", "arlington-seized-1861", "arlington-first-burial", "arlington-national-cemetery-1864",
+    "arlington-tomb-1921", "arlington-guard-1937", "arlington-old-guard", "arlington-sentinel-walk", "arlington-burials-total"
+  ],
+  "moreInfo": [
+    { "label": "History of Arlington National Cemetery", "url": "https://www.arlingtoncemetery.mil/Explore/History-of-Arlington-National-Cemetery" },
+    { "label": "Tomb of the Unknown Soldier", "url": "https://www.arlingtoncemetery.mil/Explore/Tomb-of-the-Unknown-Soldier" }
+  ],
+  "ifShortOnTime": "Tell the story in one minute and have one boy from each patrol walk the pattern.",
+  "lowVolunteerNote": "One leader is enough; the other patrol supplies the judge.",
+  "linkedGames": []
+}
