@@ -3,6 +3,8 @@
 A browser-based lesson tool for Trail Life USA Troop MO-8605 leaders teaching the Military Heritage Trail Badge to Navigators and Adventurers (ages 11–17). Read `PLAN.md` before any task. It is the source of truth for scope, data model, and build phases.
 
 ## How to work
+- Read `docs/decisions.md` after `PLAN.md`. It records where the build deliberately differs from the plan (positions as coordinates, `hiddenFrom` fog of war, the source registry, phase order). Where they disagree, `docs/decisions.md` wins. Add to it when a phase makes a similar call.
+- Run `npm test` and `npm run check` before every commit. Both must pass.
 - Work one phase from `PLAN.md` section 11 at a time. At the end of a phase, stop, summarize what was built, list anything unverified, and wait for review before starting the next.
 - Small commits with clear messages. One pull request per phase.
 - If an instruction here conflicts with a request in the session, ask.
