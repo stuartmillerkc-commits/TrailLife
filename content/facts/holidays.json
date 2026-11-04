@@ -1,0 +1,137 @@
+[
+  {
+    "id": "holiday-memorial-day",
+    "statement": "Memorial Day, a federal holiday on the last Monday in May, honors those who died while serving in the military.",
+    "sourceId": "wiki-memorial-day",
+    "corroboratingSources": [
+      { "title": "Federal Holidays", "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "publisher": "U.S. Office of Personnel Management" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-memorial-day-origin",
+    "statement": "Memorial Day began as Decoration Day. Gen. John A. Logan’s General Order No. 11, dated May 5, 1868, set aside May 30, 1868, to decorate the graves of soldiers who died in the Civil War.",
+    "sourceId": "va-logan-general-order-11",
+    "corroboratingSources": [
+      { "title": "Memorial Day", "url": "https://en.wikipedia.org/wiki/Memorial_Day", "publisher": "Wikipedia", "location": "The name “Decoration Day”" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-memorial-day-monday",
+    "statement": "The Uniform Monday Holiday Act moved Memorial Day from May 30 to the last Monday in May, starting in 1971.",
+    "sourceId": "wiki-uniform-monday-holiday-act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-veterans-day",
+    "statement": "Veterans Day, a federal holiday on November 11, thanks everyone who served in the U.S. military, living or dead.",
+    "sourceId": "wiki-veterans-day",
+    "corroboratingSources": [
+      { "title": "Memorial Day", "url": "https://en.wikipedia.org/wiki/Memorial_Day", "publisher": "Wikipedia", "location": "Contrast with Veterans Day" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-armistice-1918",
+    "statement": "World War I’s fighting stopped under an armistice that took effect at the eleventh hour of the eleventh day of the eleventh month of 1918.",
+    "sourceId": "wiki-veterans-day",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-armistice-day-1938",
+    "statement": "A 1938 act of Congress made November 11 a legal holiday, then called Armistice Day.",
+    "sourceId": "govinfo-veterans-day",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-veterans-day-1954",
+    "statement": "In 1954 Congress changed the word “Armistice” to “Veterans,” so the day honors veterans of all wars. President Eisenhower signed the change.",
+    "sourceId": "govinfo-veterans-day",
+    "corroboratingSources": [
+      { "title": "Veterans Day", "url": "https://en.wikipedia.org/wiki/Veterans_Day", "publisher": "Wikipedia" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-veterans-day-october",
+    "statement": "The Uniform Monday Holiday Act moved Veterans Day to the fourth Monday in October. The first Veterans Day under that law was October 25, 1971.",
+    "sourceId": "govinfo-veterans-day",
+    "corroboratingSources": [
+      { "title": "Uniform Monday Holiday Act", "url": "https://en.wikipedia.org/wiki/Uniform_Monday_Holiday_Act", "publisher": "Wikipedia" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-veterans-day-returned",
+    "statement": "A 1975 law signed by President Gerald Ford returned Veterans Day to November 11, beginning in 1978.",
+    "sourceId": "govinfo-veterans-day",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-armed-forces-day",
+    "statement": "Armed Forces Day, the third Saturday in May, honors Americans serving in the military now. Announced in 1949 and first held May 20, 1950, it was meant to replace the separate days each branch had held.",
+    "sourceId": "wiki-armed-forces-day",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-pow-mia",
+    "statement": "National POW/MIA Recognition Day, the third Friday in September, honors prisoners of war and those still missing in action.",
+    "sourceId": "wiki-pow-mia-day",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-gold-star",
+    "statement": "Gold Star Mother’s and Family’s Day, the last Sunday in September, honors families who lost a loved one in military service.",
+    "sourceId": "wiki-gold-star-mothers-day",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-pearl-harbor",
+    "statement": "National Pearl Harbor Remembrance Day, December 7, honors the 2,403 Americans killed in the 1941 attack on Pearl Harbor. Congress created it in 1994.",
+    "sourceId": "wiki-pearl-harbor-day",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-federal-list",
+    "statement": "Of these days, only Memorial Day and Veterans Day are federal holidays. Armed Forces Day, POW/MIA Recognition Day, Gold Star Mother’s and Family’s Day and Pearl Harbor Remembrance Day are observances, not days off.",
+    "sourceId": "opm-federal-holidays",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5"],
+    "tags": ["holidays"]
+  },
+  {
+    "id": "holiday-veterans-day-2026",
+    "statement": "In 2026, Veterans Day falls on Wednesday, November 11.",
+    "sourceId": "opm-federal-holidays",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["5", "9"],
+    "tags": ["holidays", "scheduling"]
+  }
+]

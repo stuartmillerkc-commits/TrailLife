@@ -1,0 +1,35 @@
+[
+  {
+    "id": "gi-bill-signed",
+    "statement": "The Servicemen’s Readjustment Act of 1944, called the GI Bill, was signed by President Franklin D. Roosevelt on June 22, 1944.",
+    "sourceId": "nara-gi-bill",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["11"],
+    "tags": ["gi-bill"]
+  },
+  {
+    "id": "gi-bill-benefits",
+    "statement": "The GI Bill gave returning World War II veterans money for college or job training, help buying a home, and unemployment pay.",
+    "sourceId": "nara-gi-bill",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["11"],
+    "tags": ["gi-bill"]
+  },
+  {
+    "id": "gi-bill-effects",
+    "statement": "About 2.3 million veterans went to college under the GI Bill, and by 1955 it had backed 4.3 million home loans.",
+    "sourceId": "nara-gi-bill",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["11"],
+    "tags": ["gi-bill"],
+    "leaderNote": "The same National Archives page notes that many Black veterans couldn’t get these loans because of discrimination. Worth a sentence if a boy asks whether everyone benefited."
+  },
+  {
+    "id": "gi-bill-post-911",
+    "statement": "Today’s main version is the Post-9/11 GI Bill, which helps veterans pay for school or job training.",
+    "sourceId": "va-post-911-gi-bill",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["11"],
+    "tags": ["gi-bill"]
+  }
+]
