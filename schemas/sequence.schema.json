@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sequence.schema.json",
+  "title": "Sequence",
+  "description": "An ordered list of modules: a meeting (content/sequences/<id>.json). PLAN.md section 6.3. The sequence builder (Phase 2) exports files in this shape.",
+  "type": "object",
+  "required": ["id", "title", "steps"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "title": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+    "totalMinutes": { "type": "integer", "minimum": 1, "description": "Target meeting length. The check warns if the steps don't add up to it." },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["moduleId", "minutes"],
+        "additionalProperties": false,
+        "properties": {
+          "moduleId": { "$ref": "common.schema.json#/$defs/id" },
+          "minutes": { "type": "integer", "minimum": 1 },
+          "optional": { "type": "boolean", "description": "Hidden when the leader turns on Short on time." }
+        }
+      }
+    },
+    "author": { "type": "string", "description": "A leader's name or initials. Never a boy's name." },
+    "notes": { "type": "string" }
+  }
+}

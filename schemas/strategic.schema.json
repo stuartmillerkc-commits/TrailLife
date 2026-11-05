@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strategic.schema.json",
+  "title": "Strategic layer",
+  "description": "content/battles/<id>/strategic.json: the regional \"Why here, why now?\" map (PLAN.md 8.1, rung 1). Added in Phase 0 to hold the Cowpens prototype's region-map data. Places are drawn from latitude and longitude.",
+  "type": "object",
+  "required": ["bounds", "title", "narration", "sourceIds", "approximateNote"],
+  "additionalProperties": false,
+  "properties": {
+    "bounds": {
+      "type": "object",
+      "required": ["west", "east", "north", "south"],
+      "additionalProperties": false,
+      "properties": {
+        "west": { "type": "number" }, "east": { "type": "number" },
+        "north": { "type": "number" }, "south": { "type": "number" }
+      }
+    },
+    "title": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+    "clockLabel": { "type": "string", "description": "e.g. \"Jan 1781\"." },
+    "narration": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+    "leaderNotes": { "$ref": "#/$defs/leaderNotes" },
+    "places": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "at"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+          "at": { "$ref": "common.schema.json#/$defs/latLon" },
+          "isBattle": { "type": "boolean", "description": "Draw as the highlighted battle marker." },
+          "labelOffset": { "$ref": "common.schema.json#/$defs/point" },
+          "labelAnchor": { "enum": ["start", "middle", "end"] }
+        }
+      }
+    },
+    "rivers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+          "path": { "type": "array", "minItems": 2, "items": { "$ref": "common.schema.json#/$defs/latLon" } },
+          "labelAt": { "$ref": "common.schema.json#/$defs/latLon" }
+        }
+      }
+    },
+    "borders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "path": { "type": "array", "minItems": 2, "items": { "$ref": "common.schema.json#/$defs/latLon" } }
+        }
+      }
+    },
+    "regionLabels": {
+      "type": "array",
+      "description": "Large italic labels such as state names.",
+      "items": {
+        "type": "object",
+        "required": ["text", "at"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+          "at": { "$ref": "common.schema.json#/$defs/latLon" }
+        }
+      }
+    },
+    "campaignArrows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["side", "label", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "side": { "$ref": "common.schema.json#/$defs/side" },
+          "label": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+          "path": { "type": "array", "minItems": 2, "items": { "$ref": "common.schema.json#/$defs/latLon" } },
+          "labelAtEnd": { "type": "boolean" }
+        }
+      }
+    },
+    "sourceIds": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/id" } },
+    "approximateNote": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "e.g. \"Schematic regional map; places and rivers approximate.\"" },
+    "factIds": { "$ref": "common.schema.json#/$defs/idList" }
+  },
+  "$defs": {
+    "leaderNotes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "discussion": { "type": "string" },
+        "captureTheFlag": { "type": "string" }
+      }
+    }
+  }
+}

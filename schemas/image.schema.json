@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "image.schema.json",
+  "title": "Image manifest",
+  "description": "content/images/manifest.json: every image the site uses, with its license. PLAN.md sections 6.4 and 10. Only images with rehostAllowed: true are copied into assets/images and the offline build; the rest show a \"view image\" link.",
+  "type": "array",
+  "items": { "$ref": "#/$defs/image" },
+  "$defs": {
+    "image": {
+      "type": "object",
+      "required": ["id", "caption", "category", "sourcePage", "credit", "license", "rehostAllowed"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "caption": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+        "answer": { "type": "string", "description": "For Picture ID: the answer revealed after patrols guess." },
+        "altText": { "type": "string", "description": "Description for screen readers." },
+        "category": { "enum": ["branch-emblem", "rank-insignia", "aircraft", "ship-or-vehicle", "memorial", "historical", "battle-map", "other"] },
+        "localFile": { "type": "string", "pattern": "^assets/images/[^/]+$", "description": "Required when rehostAllowed is true." },
+        "sourcePage": { "$ref": "common.schema.json#/$defs/url", "description": "The page the image came from (not the raw image file)." },
+        "credit": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "e.g. \"U.S. Air Force photo\"." },
+        "license": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "e.g. \"Public domain (U.S. government work)\" or \"CC BY-SA 4.0\"." },
+        "rehostAllowed": { "type": "boolean" },
+        "factIds": { "$ref": "common.schema.json#/$defs/idList" }
+      },
+      "if": { "properties": { "rehostAllowed": { "const": true } } },
+      "then": { "required": ["localFile"] }
+    }
+  }
+}

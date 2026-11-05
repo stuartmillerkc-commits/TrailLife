@@ -1,0 +1,18 @@
+{
+  "id": "example-ridge",
+  "name": "Example Ridge (fictional test data)",
+  "date": "2000-01-01",
+  "location": "Nowhere; this battle is made up to test the schemas",
+  "ladderRung": "tactical",
+  "mapLayers": ["strategic", "tactical"],
+  "sides": [
+    { "id": "blue", "label": "Blue", "subgroups": [{ "id": "blue-reserve", "label": "Blue reserve" }] },
+    { "id": "red", "label": "Red" }
+  ],
+  "field": { "width": 600, "height": 900, "unitName": "yards", "orientationNote": "Blue at the top." },
+  "grid": { "cellSize": 100, "columns": 6, "rows": 9 },
+  "requirements": ["22"],
+  "sourceIds": ["example-source"],
+  "positionsDisclaimer": "Positions approximate, after the example source.",
+  "factIds": ["example-fact"]
+}

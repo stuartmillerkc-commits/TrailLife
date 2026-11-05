@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "whatifs.schema.json",
+  "title": "What-ifs",
+  "description": "content/battles/<id>/whatifs.json: alternate outcomes, clearly labeled as not history (PLAN.md 8.13). One change per what-if, forked at a documented decision point, with two or three sourced reasoning bullets. Never invent casualty numbers: the check warns on anything that looks like one.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "title", "forkPhase", "change", "confidence", "reasoning", "reasoningSourceIds", "discussion"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "title": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "e.g. “What if Tarleton waited?”" },
+      "forkPhase": { "type": "integer", "minimum": 0, "description": "Index of the real phase this branches from. Must have a decisionPoint." },
+      "change": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "The one thing that's different." },
+      "confidence": {
+        "enum": ["historians-argue", "likely", "open-question"],
+        "description": "historians-argue: a published historian suggested it (cite them in historianSourceIds). likely. open-question: a discussion prompt with no single answer."
+      },
+      "historianSourceIds": {
+        "$ref": "common.schema.json#/$defs/idList",
+        "description": "Required when confidence is historians-argue."
+      },
+      "reasoning": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 3,
+        "items": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+        "description": "Why, in two or three bullets, resting on real facts (numbers, terrain, timing) and principles (surprise, high ground, reserves, communication)."
+      },
+      "reasoningSourceIds": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/id" } },
+      "reasoningFactIds": { "$ref": "common.schema.json#/$defs/idList" },
+      "phases": {
+        "type": "array",
+        "description": "The alternate phases. Same shape as phases.json, but sourceIds aren't required since it's not history.",
+        "items": { "$ref": "#/$defs/alternatePhase" }
+      },
+      "endings": {
+        "type": "array",
+        "description": "For open-question what-ifs: two possible endings. Boys argue for one before seeing the reasoning.",
+        "minItems": 2,
+        "items": {
+          "type": "object",
+          "required": ["label", "phases"],
+          "additionalProperties": false,
+          "properties": {
+            "label": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+            "phases": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/alternatePhase" } }
+          }
+        }
+      },
+      "discussion": { "$ref": "common.schema.json#/$defs/nonEmptyText" }
+    },
+    "allOf": [
+      {
+        "if": { "properties": { "confidence": { "const": "historians-argue" } } },
+        "then": { "required": ["historianSourceIds"] }
+      },
+      {
+        "anyOf": [
+          { "title": "has phases", "required": ["phases"] },
+          { "title": "has endings", "required": ["endings"] }
+        ]
+      }
+    ]
+  },
+  "$defs": {
+    "alternatePhase": {
+      "type": "object",
+      "required": ["title", "narration"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+        "time": { "type": "string" },
+        "narration": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "Stay at the level of “held the line” or “probably escaped”. No invented figures." },
+        "units": { "type": "object", "additionalProperties": { "$ref": "phases.schema.json#/$defs/unitChange" } },
+        "movements": { "type": "array", "items": { "type": "object" } }
+      }
+    }
+  }
+}

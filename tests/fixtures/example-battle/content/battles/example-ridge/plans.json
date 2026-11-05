@@ -1,0 +1,13 @@
+[
+  {
+    "id": "blue-plan",
+    "side": "blue",
+    "commander": "Blue commander",
+    "label": "Blue’s plan",
+    "atPhase": 0,
+    "positions": { "blue-line": [300, 150], "blue-horse": [470, 40] },
+    "arrows": [{ "unitId": "blue-horse", "label": "Strike the flank", "path": [[470, 40], [520, 300]] }],
+    "notes": "Test data.",
+    "sourceIds": ["example-source"]
+  }
+]

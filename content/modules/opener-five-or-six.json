@@ -1,0 +1,40 @@
+{
+  "id": "opener-five-or-six",
+  "title": "Opener: Five or six?",
+  "requirements": ["1"],
+  "durationMinutes": 5,
+  "activityType": ["competition", "discussion"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Whiteboard and markers", "The badge sheet, for its “five branches” line"],
+  "printables": [],
+  "displayContent": {
+    "headline": "How many branches?",
+    "body": "Your patrol has 60 seconds. Write every branch of the U.S. Armed Forces you can name.",
+    "images": []
+  },
+  "leaderScript": [
+    "Give each patrol 60 seconds to write every branch of the Armed Forces on the whiteboard.",
+    "Read the badge sheet’s line about “five branches,” then ask who’s right.",
+    "Reveal the answer. Treat it as a puzzle, not a correction: the sheet is dated 2018."
+  ],
+  "discussionQuestions": [
+    {
+      "question": "The badge sheet says five branches. Why might it be out of date?",
+      "answer": "It was printed in 2018. The Space Force was established December 20, 2019.",
+      "factIds": ["branch-space-force"]
+    }
+  ],
+  "reveal": {
+    "type": "text",
+    "text": "Six. The Space Force was established on December 20, 2019, after the badge sheet was printed.",
+    "factIds": ["branch-space-force"]
+  },
+  "factIds": ["branch-space-force"],
+  "moreInfo": [
+    { "label": "U.S. Space Force", "url": "https://www.spaceforce.mil/" }
+  ],
+  "ifShortOnTime": "Skip the whiteboard race. Ask the question out loud and reveal.",
+  "lowVolunteerNote": "Runs fine with one leader as a whole-group activity.",
+  "linkedGames": []
+}

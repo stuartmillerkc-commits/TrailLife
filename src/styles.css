@@ -1,0 +1,82 @@
+/* Site styles. Colors follow the Cowpens prototype so the battle pages will match.
+   Fonts are system fonts so the site looks right offline (no web font downloads). */
+
+:root {
+  color-scheme: light;
+  --page: #e9ece1;
+  --panel: #f6f7f1;
+  --panel-edge: #c9cdbb;
+  --ink: #1f2a2e;
+  --ink-soft: #4d5a5e;
+  --american: #2b4c7e;
+  --british: #b0302a;
+  --brass: #a87a1c;
+  --brass-soft: #f1e3bf;
+  --focus: #2b4c7e;
+  --serif: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --sans: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* Dark mode: follows the computer's setting unless a page forces data-theme="light". */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #141a1c; --panel: #1c2427; --panel-edge: #33403f; --ink: #e4e7dd; --ink-soft: #a9b2ab;
+    --american: #8fb0e3; --british: #e8766d; --brass: #d9ad4f; --brass-soft: #3d3420; --focus: #8fb0e3;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #141a1c; --panel: #1c2427; --panel-edge: #33403f; --ink: #e4e7dd; --ink-soft: #a9b2ab;
+  --american: #8fb0e3; --british: #e8766d; --brass: #d9ad4f; --brass-soft: #3d3420; --focus: #8fb0e3;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 16px 20px 40px;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1, h2, h3 { font-family: var(--serif); line-height: 1.2; }
+h1 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); margin: 0; }
+a { color: var(--american); }
+
+/* Visible focus for keyboard users, everywhere. */
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 16px; top: 8px; background: var(--panel); padding: 6px 10px; z-index: 10; }
+
+.site-header p { margin: 4px 0 0; color: var(--ink-soft); }
+
+.status-note {
+  border: 2px solid var(--brass);
+  background: var(--brass-soft);
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+.card-list { list-style: none; padding: 0; display: grid; gap: 10px; }
+.card-list > li {
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+.card-list h3 { margin: 0 0 4px; font-size: 1.15rem; }
+.card-meta { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+.loading, .error-message { color: var(--ink-soft); }
+.error-message { border-color: var(--british) !important; }
+
+.site-footer { margin-top: 32px; color: var(--ink-soft); font-size: 0.85rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

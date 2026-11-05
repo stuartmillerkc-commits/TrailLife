@@ -1,0 +1,19 @@
+[
+  {
+    "id": "example-fact",
+    "statement": "Example Ridge is made up for testing.",
+    "sourceId": "example-source",
+    "sourceLocation": "p. 1",
+    "verifiedOn": "2026-11-04",
+    "disagreement": {
+      "alternatives": [{ "statement": "Another made-up version.", "source": { "title": "Other example", "url": "https://example.org/other" } }],
+      "siteDisplays": "The fact’s own statement.",
+      "teachingNote": "Sources can disagree."
+    }
+  },
+  {
+    "id": "example-unverified",
+    "statement": "Something nobody has checked yet.",
+    "needsVerification": true
+  }
+]

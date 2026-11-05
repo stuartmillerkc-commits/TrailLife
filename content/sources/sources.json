@@ -1,0 +1,34 @@
+[
+  {
+    "id": "csi-cowpens-staff-ride",
+    "title": "The Cowpens Staff Ride and Battlefield Tour",
+    "author": "John Moncure",
+    "publisher": "Combat Studies Institute, U.S. Army Command and General Staff College",
+    "year": 1996,
+    "url": "https://www.govinfo.gov/content/pkg/GOVPUB-D110-PURL-LPS59122/pdf/GOVPUB-D110-PURL-LPS59122.pdf",
+    "localFile": "sources/cowpens-staff-ride.pdf",
+    "license": "public-domain",
+    "notes": "Order of battle and timed maps 0700–0750 (maps 8–14). Primary source for Cowpens positions."
+  },
+  {
+    "id": "csi-prices-expedition-atlas",
+    "title": "Battlefield Atlas of Price’s Missouri Expedition of 1864",
+    "author": "Charles D. Collins Jr.",
+    "publisher": "Combat Studies Institute",
+    "year": 2016,
+    "url": "https://www.armyupress.army.mil/Portals/7/educational-services/staff-rides/StaffRideHB_AtlasofPricesMissouriExpeditionof1864.pdf",
+    "mirrorUrls": ["https://apps.dtic.mil/sti/trecms/pdf/AD1112174.pdf"],
+    "localFile": "sources/prices-expedition-atlas.pdf",
+    "license": "public-domain",
+    "notes": "Little Blue, Independence, Byram’s Ford, Westport and Mine Creek. Primary source for Westport."
+  },
+  {
+    "id": "csi-wilsons-creek-staff-ride",
+    "title": "Wilson’s Creek Staff Ride and Battlefield Tour",
+    "publisher": "Combat Studies Institute",
+    "url": "https://apps.dtic.mil/sti/tr/pdf/ADA530378.pdf",
+    "localFile": "sources/wilsons-creek-staff-ride.pdf",
+    "license": "public-domain",
+    "notes": "Optional battle. Order of battle and timed maps 0500–1130."
+  }
+]

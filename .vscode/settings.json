@@ -1,0 +1,17 @@
+{
+  "json.schemas": [
+    { "fileMatch": ["**/content/modules/*.json"], "url": "./schemas/module.schema.json" },
+    { "fileMatch": ["**/content/sequences/*.json"], "url": "./schemas/sequence.schema.json" },
+    { "fileMatch": ["**/content/games/*.json"], "url": "./schemas/game.schema.json" },
+    { "fileMatch": ["**/content/facts/*.json"], "url": "./schemas/fact.schema.json" },
+    { "fileMatch": ["**/content/sources/sources.json"], "url": "./schemas/source.schema.json" },
+    { "fileMatch": ["**/content/images/manifest.json"], "url": "./schemas/image.schema.json" },
+    { "fileMatch": ["**/content/battles/*/battle.json"], "url": "./schemas/battle.schema.json" },
+    { "fileMatch": ["**/content/battles/*/strategic.json"], "url": "./schemas/strategic.schema.json" },
+    { "fileMatch": ["**/content/battles/*/units.json"], "url": "./schemas/units.schema.json" },
+    { "fileMatch": ["**/content/battles/*/phases.json"], "url": "./schemas/phases.schema.json" },
+    { "fileMatch": ["**/content/battles/*/patrolOrder.json"], "url": "./schemas/patrol-order.schema.json" },
+    { "fileMatch": ["**/content/battles/*/plans.json"], "url": "./schemas/plans.schema.json" },
+    { "fileMatch": ["**/content/battles/*/whatifs.json"], "url": "./schemas/whatifs.schema.json" }
+  ]
+}

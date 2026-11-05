@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "battle.schema.json",
+  "title": "Battle",
+  "description": "content/battles/<id>/battle.json: the battle's identity, map setup and sources. PLAN.md section 8.7. Positions everywhere in the battle folder are [x, y] in this file's field units; grid squares like \"C4\" are worked out from them, so the screen grid and the sand table always agree.",
+  "type": "object",
+  "required": ["id", "name", "date", "location", "ladderRung", "mapLayers", "sides", "field", "grid", "requirements", "sourceIds", "positionsDisclaimer"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/id", "description": "Must match the folder name." },
+    "name": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+    "date": { "$ref": "common.schema.json#/$defs/isoDate", "description": "First (or only) day of the battle." },
+    "endDate": { "$ref": "common.schema.json#/$defs/isoDate", "description": "Last day, for multi-day battles such as Westport (Oct 21–23, 1864)." },
+    "location": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+    "ladderRung": { "enum": ["strategic", "operational", "tactical"], "description": "PLAN.md 8.1." },
+    "mapLayers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "enum": ["strategic", "topographic", "tactical", "period"] }
+    },
+    "sides": {
+      "type": "array",
+      "minItems": 2,
+      "description": "Who fought. Unit and arrow \"side\" values must come from this list.",
+      "items": {
+        "type": "object",
+        "required": ["id", "label"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/id" },
+          "label": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+          "commander": { "type": "string" },
+          "subgroups": {
+            "type": "array",
+            "description": "Sub-shades within a side, e.g. McCulloch's Confederates vs. Price's Missouri State Guard.",
+            "items": {
+              "type": "object",
+              "required": ["id", "label"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "$ref": "common.schema.json#/$defs/id" },
+                "label": { "$ref": "common.schema.json#/$defs/nonEmptyText" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "field": {
+      "type": "object",
+      "description": "The tactical map's coordinate space. The Cowpens prototype uses 600 × 900 yards with the Americans at the top.",
+      "required": ["width", "height", "unitName"],
+      "additionalProperties": false,
+      "properties": {
+        "width": { "type": "number", "minimum": 1 },
+        "height": { "type": "number", "minimum": 1 },
+        "unitName": { "enum": ["yards", "meters", "feet"] },
+        "orientationNote": { "type": "string", "description": "e.g. \"North is to the right; Americans at the top facing southeast.\"" }
+      }
+    },
+    "grid": {
+      "type": "object",
+      "description": "Lettered columns and numbered rows, matching the sand table string grid. columns × cellSize must equal field.width, and rows × cellSize must equal field.height.",
+      "required": ["cellSize", "columns", "rows"],
+      "additionalProperties": false,
+      "properties": {
+        "cellSize": { "type": "number", "minimum": 1 },
+        "columns": { "type": "integer", "minimum": 1, "maximum": 26, "description": "Labeled A, B, C… from the left." },
+        "rows": { "type": "integer", "minimum": 1, "description": "Labeled 1, 2, 3… from the top." }
+      }
+    },
+    "requirements": { "$ref": "common.schema.json#/$defs/requirementList" },
+    "sourceIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "common.schema.json#/$defs/id" },
+      "uniqueItems": true
+    },
+    "positionsDisclaimer": {
+      "$ref": "common.schema.json#/$defs/nonEmptyText",
+      "description": "Shown on every phase, e.g. \"Positions approximate, after the Combat Studies Institute staff ride guide (1996).\""
+    },
+    "factIds": { "$ref": "common.schema.json#/$defs/idList" },
+    "watchLinks": {
+      "type": "array",
+      "description": "Leader prep links such as the American Battlefield Trust animated maps. Link only; never embed.",
+      "items": { "$ref": "common.schema.json#/$defs/link" }
+    }
+  }
+}

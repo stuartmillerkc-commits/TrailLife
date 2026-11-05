@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "patrol-order.schema.json",
+  "title": "Patrol orders",
+  "description": "content/battles/<id>/patrolOrder.json: a commander's plan restated in the five-part order the boys use for capture the flag (PLAN.md 8.5 and 8.8). A list, so one battle can carry both sides' orders. These are reconstructions, not historical documents; say so in \"note\".",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["battleId", "side", "commander", "situation", "mission", "commandersIntent", "roles", "signals", "sourceIds", "note"],
+    "additionalProperties": false,
+    "properties": {
+      "battleId": { "$ref": "common.schema.json#/$defs/id" },
+      "side": { "$ref": "common.schema.json#/$defs/side" },
+      "commander": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+      "title": { "type": "string", "description": "e.g. “Morgan’s plan as a patrol order”." },
+      "situation": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+      "mission": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+      "commandersIntent": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+      "roles": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["role", "who"],
+          "additionalProperties": false,
+          "properties": {
+            "role": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "e.g. Bait, Anchor, Hidden strike." },
+            "who": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+            "task": { "type": "string", "description": "What they do, in one sentence." }
+          }
+        }
+      },
+      "signals": { "$ref": "common.schema.json#/$defs/nonEmptyText" },
+      "closingPrompt": { "type": "string", "description": "e.g. “Now write yours the same way for capture the flag.”" },
+      "note": { "$ref": "common.schema.json#/$defs/nonEmptyText", "description": "e.g. “Reconstructed from the staff ride guide’s account of Morgan’s plan. Not a historical document.”" },
+      "sourceIds": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/id" } },
+      "factIds": { "$ref": "common.schema.json#/$defs/idList" }
+    }
+  }
+}
