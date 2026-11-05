@@ -2,18 +2,20 @@
 // Builds dist/military-heritage.html: one file that runs with Wi-Fi off.
 // Run with `npm run build` (that also refreshes the content index and runs the source check first).
 //
-// What it does today (Phase 0, minimal):
+// What it does:
 //   - inlines src/styles.css into a <style> tag
 //   - embeds every content file as JSON in <script type="application/json" id="embedded-content">
-//   - inlines src/app.js as a module script
+//   - joins src/app.js and everything it imports into one script (scripts/lib/bundle-modules.js)
 //
-// Phase 7 extends this to follow `import` statements across src/, inline re-hostable
-// images from assets/images, and verify the result offline. Until then, src/app.js
-// must be a single file with no imports; the build stops with a clear message if not.
+// Phase 7 adds re-hostable images from assets/images and an offline test.
+// The display window in the offline file is opened from the same file (#/display) and is
+// linked by postMessage, since BroadcastChannel is unreliable on file:// pages.
 
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { CONTENT_INDEX_FILE, DEFAULT_CONTENT_DIRECTORY, REPO_ROOT, listContentFiles } from "./lib/content-files.js";
+import { bundleModules } from "./lib/bundle-modules.js";
 
 const STYLESHEET_TAG = '<link rel="stylesheet" href="src/styles.css">';
 const APP_SCRIPT_TAG = '<script type="module" src="src/app.js"></script>';
@@ -25,14 +27,11 @@ const read = (relativePath) => readFileSync(path.join(REPO_ROOT, relativePath), 
 // or the browser would end the tag early. "<\/" means the same thing to JavaScript and JSON.
 const makeSafeForInlineTag = (text) => text.replace(/<\/(script|style)/gi, "<\\/$1");
 
-function build() {
+export function buildSingleFile() {
   let page = read("index.html");
   const styles = read("src/styles.css");
-  const appCode = read("src/app.js");
+  const { code: appCode, files: bundledFiles } = bundleModules(path.join(REPO_ROOT, "src", "app.js"), REPO_ROOT);
 
-  if (/^\s*import\s/m.test(appCode)) {
-    throw new Error("src/app.js uses `import`. The Phase 0 build can't bundle modules yet; that's Phase 7's job.");
-  }
   for (const tag of [STYLESHEET_TAG, APP_SCRIPT_TAG]) {
     if (!page.includes(tag)) throw new Error(`index.html no longer contains ${tag}; update build-single-file.js to match.`);
   }
@@ -52,13 +51,16 @@ function build() {
 
   mkdirSync(path.dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, page, "utf8");
-  const sizeInKilobytes = (Buffer.byteLength(page, "utf8") / 1024).toFixed(1);
-  console.log(`Built dist/military-heritage.html (${sizeInKilobytes} KB, ${contentFiles.length} content files).`);
+  return { outputPath, sizeInKilobytes: Buffer.byteLength(page, "utf8") / 1024, contentFileCount: contentFiles.length, bundledFiles };
 }
 
-try {
-  build();
-} catch (error) {
-  console.error(`Build failed: ${error.message}`);
-  process.exitCode = 1;
+const isMainScript = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMainScript) {
+  try {
+    const result = buildSingleFile();
+    console.log(`Built dist/military-heritage.html (${result.sizeInKilobytes.toFixed(1)} KB, ${result.contentFileCount} content files, ${result.bundledFiles.length} code files).`);
+  } catch (error) {
+    console.error(`Build failed: ${error.message}`);
+    process.exitCode = 1;
+  }
 }

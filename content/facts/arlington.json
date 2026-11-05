@@ -1,0 +1,98 @@
+[
+  {
+    "id": "arlington-custis-lee-estate",
+    "statement": "Arlington National Cemetery sits on the Arlington estate built by George Washington Parke Custis, Robert E. Lee’s father-in-law. Lee managed it as executor of Custis’s will but never owned it.",
+    "sourceId": "anc-history",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"],
+    "leaderNote": "The leader guide says “the estate of Robert E. Lee’s wife’s family,” which matches. Avoid saying Lee owned it."
+  },
+  {
+    "id": "arlington-seized-1861",
+    "statement": "The U.S. Army took over the Arlington estate on May 24, 1861, for its value in defending Washington, D.C.",
+    "sourceId": "anc-history",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"]
+  },
+  {
+    "id": "arlington-first-burial",
+    "statement": "The first military burial at Arlington was Pvt. William Henry Christman of the 67th Pennsylvania Infantry, on May 13, 1864. He died of illness in a hospital, not in battle.",
+    "sourceId": "anc-history",
+    "corroboratingSources": [
+      { "title": "William Henry Christman", "url": "https://en.wikipedia.org/wiki/William_Henry_Christman", "publisher": "Wikipedia", "location": "Unit and cause of death" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"],
+    "leaderNote": "The leader guide says he died of measles. Wikipedia says he was hospitalized with measles and died of peritonitis on May 11, 1864. The site says “illness” so it’s right either way."
+  },
+  {
+    "id": "arlington-national-cemetery-1864",
+    "statement": "Arlington officially became a national cemetery on June 15, 1864, by order of Secretary of War Edwin Stanton.",
+    "sourceId": "anc-history",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"]
+  },
+  {
+    "id": "arlington-tomb-1921",
+    "statement": "The Tomb of the Unknown Soldier was dedicated on November 11, 1921, with the burial of an unknown American soldier from World War I.",
+    "sourceId": "anc-history",
+    "corroboratingSources": [
+      { "title": "Tomb of the Unknown Soldier", "url": "https://www.arlingtoncemetery.mil/Explore/Tomb-of-the-Unknown-Soldier", "publisher": "Arlington National Cemetery" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"]
+  },
+  {
+    "id": "arlington-guard-1937",
+    "statement": "The Tomb has been guarded every minute of every day since July 2, 1937.",
+    "sourceId": "militarytimes-tomb-guard-1937",
+    "corroboratingSources": [
+      { "title": "Tomb of the Unknown Soldier", "url": "https://www.arlingtoncemetery.mil/Explore/Tomb-of-the-Unknown-Soldier", "publisher": "Arlington National Cemetery", "location": "Says “In 1937, the guards became a 24/7 presence” without a day" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"],
+    "leaderNote": "The cemetery’s own page gives only the year, 1937. One web search turned up a July 1 date, but that page couldn’t be opened to cite, so July 2 (Military Times, quoting the American Legion) is shown."
+  },
+  {
+    "id": "arlington-old-guard",
+    "statement": "Since 1948, Tomb guards have come from the 3rd U.S. Infantry Regiment, known as “The Old Guard.”",
+    "sourceId": "army-tomb-of-the-unknowns",
+    "corroboratingSources": [
+      { "title": "Tomb of the Unknown Soldier", "url": "https://www.arlingtoncemetery.mil/Explore/Tomb-of-the-Unknown-Soldier", "publisher": "Arlington National Cemetery", "location": "The Old Guard designated the Army’s ceremonial unit April 6, 1948" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"]
+  },
+  {
+    "id": "arlington-sentinel-walk",
+    "statement": "A Tomb guard marches 21 steps down the mat, turns and faces east for 21 seconds, turns and faces north for 21 seconds, then takes 21 steps back. The 21 stands for the 21-gun salute, the highest military honor.",
+    "sourceId": "anc-tomb",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"]
+  },
+  {
+    "id": "arlington-burials-total",
+    "statement": "Nearly 430,000 veterans and their eligible family members are buried at Arlington National Cemetery.",
+    "sourceId": "anc-history",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["10"],
+    "tags": ["arlington"],
+    "leaderNote": "The leader guide says “more than 400,000,” which is still true. The cemetery’s own figure is used here."
+  },
+  {
+    "id": "arlington-burials-per-year",
+    "statement": "Arlington holds about 6,900 burials a year.",
+    "needsVerification": true,
+    "requirements": ["10"],
+    "tags": ["arlington"],
+    "leaderNote": "From the leader guide. The cemetery’s site gave no yearly figure on 2026-11-04. Travel and news sites say 27 to 30 funerals each weekday, which is roughly 7,000 a year, but none is an official source. Not shown on the projector until confirmed."
+  }
+]

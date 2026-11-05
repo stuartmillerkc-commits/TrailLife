@@ -16,25 +16,32 @@
   "leaderScript": [
     "Give each patrol 60 seconds to write every branch of the Armed Forces on the whiteboard.",
     "Read the badge sheet’s line about “five branches,” then ask who’s right.",
-    "Reveal the answer. Treat it as a puzzle, not a correction: the sheet is dated 2018."
+    "Press R to reveal all six. Treat it as a puzzle, not a correction: the sheet is dated 2018, and the Space Force came in December 2019.",
+    "Ask the two discussion questions, then move on."
   ],
   "discussionQuestions": [
     {
-      "question": "The badge sheet says five branches. Why might it be out of date?",
-      "answer": "It was printed in 2018. The Space Force was established December 20, 2019.",
-      "factIds": ["branch-space-force"]
+      "question": "Which branch is the oldest?",
+      "answer": "The Army, from the Continental Army of June 14, 1775. The Navy and Marines followed later that year.",
+      "factIds": ["branch-army-founded"]
+    },
+    {
+      "question": "Which branch isn’t in the Department of Defense?",
+      "answer": "The Coast Guard. In peacetime it’s under the Department of Homeland Security.",
+      "factIds": ["branch-coast-guard-dhs"]
     }
   ],
   "reveal": {
-    "type": "text",
-    "text": "Six. The Space Force was established on December 20, 2019, after the badge sheet was printed.",
-    "factIds": ["branch-space-force"]
+    "type": "list",
+    "title": "Six branches",
+    "items": ["Army", "Navy", "Marine Corps", "Air Force", "Space Force (since December 20, 2019)", "Coast Guard"],
+    "factIds": ["branch-count-six", "branch-space-force"]
   },
-  "factIds": ["branch-space-force"],
+  "factIds": ["branch-count-six", "branch-space-force", "badge-sheet-five-branches", "branch-army-founded", "branch-coast-guard-dhs"],
   "moreInfo": [
-    { "label": "U.S. Space Force", "url": "https://www.spaceforce.mil/" }
+    { "label": "United States Armed Forces (Wikipedia)", "url": "https://en.wikipedia.org/wiki/United_States_Armed_Forces" }
   ],
-  "ifShortOnTime": "Skip the whiteboard race. Ask the question out loud and reveal.",
+  "ifShortOnTime": "Skip the whiteboard race. Ask “five or six?” out loud and reveal.",
   "lowVolunteerNote": "Runs fine with one leader as a whole-group activity.",
   "linkedGames": []
 }

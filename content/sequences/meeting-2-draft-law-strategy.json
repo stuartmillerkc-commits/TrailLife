@@ -1,0 +1,14 @@
+{
+  "id": "meeting-2-draft-law-strategy",
+  "title": "Meeting 2 — Draft, Law & Strategy",
+  "totalMinutes": 75,
+  "steps": [
+    { "moduleId": "birthday-draft-lottery", "minutes": 12 },
+    { "moduleId": "who-can-respond", "minutes": 12 },
+    { "moduleId": "rank-ladder-race", "minutes": 12, "optional": true },
+    { "moduleId": "strategy-capture-the-flag", "minutes": 30 },
+    { "moduleId": "armor-of-god-teach-back", "minutes": 9 }
+  ],
+  "author": "Leader guide (Arandur), converted in Phase 1",
+  "notes": "Covers Requirements 3, 4, 20, 22 and 23. Capture the flag is the centerpiece, so protect its 30 minutes. The rank race is marked optional because the guide says to cut it first when time runs short."
+}

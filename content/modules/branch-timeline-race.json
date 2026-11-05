@@ -1,0 +1,74 @@
+{
+  "id": "branch-timeline-race",
+  "title": "Branch timeline race",
+  "requirements": ["1"],
+  "durationMinutes": 15,
+  "activityType": ["competition", "hands-on"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Branch timeline deck per patrol: 24 cards (6 names, 6 founding dates, 6 domains, 6 “what we do”)", "A rope per patrol for the timeline"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Branch timeline race",
+    "body": "Lay your rope on the floor as a timeline. Build one row per branch, oldest first.",
+    "points": ["Name", "Founding date", "Domain: land, sea, air, space, coast or sea-to-land", "What it does", "One point per card in the right place"],
+    "images": []
+  },
+  "leaderScript": [
+    "Hand each patrol a shuffled 24-card deck and a rope.",
+    "They lay the rope as a timeline and build one row per branch in founding order.",
+    "Score one point per correct card. Press R to show the answer key on the projector while you score.",
+    "Ask the discussion questions while you score. Question 3 sets up Meeting 2, so just plant it."
+  ],
+  "discussionQuestions": [
+    {
+      "question": "The Army fights on land and the Navy at sea. Why do we also need Marines?",
+      "answer": "Marines specialize in getting from the sea to the land fast to answer a crisis: expeditionary and amphibious operations.",
+      "factIds": ["branch-marines-role"]
+    },
+    {
+      "question": "The Air Force split from the Army in 1947, and the Space Force split from the Air Force in 2019. What pattern do you see? Will there be a seventh branch?",
+      "answer": "A new domain grows big enough to get its own branch. No right answer on a seventh; let them argue (cyber comes up a lot).",
+      "factIds": ["branch-air-force-founded", "branch-space-force-from-air-force"]
+    },
+    {
+      "question": "The Coast Guard arrests drug smugglers, but the Army can’t arrest anyone at home. Why the difference?",
+      "answer": "Plant it and leave it open: the Coast Guard is a law enforcement agency, and a law keeps the other branches out of police work. That’s Meeting 2.",
+      "factIds": ["branch-coast-guard-role", "pca-coast-guard"]
+    },
+    {
+      "question": "The GPS on your parents’ phones is owned by the Space Force. What else would stop working without it?",
+      "answer": "Open question. Maps and directions are the obvious one; let them think of others.",
+      "factIds": ["branch-space-force-gps"]
+    }
+  ],
+  "reveal": {
+    "type": "table",
+    "title": "Answer key: oldest to newest",
+    "table": {
+      "columns": ["Branch", "Founded", "Domain", "What it does"],
+      "rows": [
+        { "cells": ["Army", "June 14, 1775", "Land", "Fights and holds ground; the largest branch"], "factIds": ["branch-army-founded", "branch-army-role"] },
+        { "cells": ["Navy", "October 13, 1775", "Sea", "Controls the seas with carriers, submarines and ships"], "factIds": ["branch-navy-founded", "branch-navy-role"] },
+        { "cells": ["Marine Corps", "November 10, 1775", "Sea-to-land", "Crisis response; amphibious assault"], "factIds": ["branch-marines-founded", "branch-marines-role"] },
+        { "cells": ["Coast Guard", "August 4, 1790", "Coast", "Law enforcement at sea, search and rescue, port security"], "factIds": ["branch-coast-guard-founded", "branch-coast-guard-role"] },
+        { "cells": ["Air Force", "September 18, 1947", "Air", "Air superiority, airlift, long-range strike"], "factIds": ["branch-air-force-founded", "branch-air-force-role"] },
+        { "cells": ["Space Force", "December 20, 2019", "Space", "Satellites, GPS, missile warning"], "factIds": ["branch-space-force", "branch-space-force-role", "branch-space-force-gps"] }
+      ]
+    },
+    "factIds": ["branch-coast-guard-dhs"]
+  },
+  "factIds": [
+    "branch-army-founded", "branch-army-role", "branch-navy-founded", "branch-navy-role",
+    "branch-marines-founded", "branch-marines-role", "branch-coast-guard-founded", "branch-coast-guard-role",
+    "branch-coast-guard-dhs", "branch-air-force-founded", "branch-air-force-role", "branch-space-force",
+    "branch-space-force-from-air-force", "branch-space-force-role", "branch-space-force-gps", "pca-coast-guard"
+  ],
+  "moreInfo": [
+    { "label": "United States Armed Forces (Wikipedia)", "url": "https://en.wikipedia.org/wiki/United_States_Armed_Forces" },
+    { "label": "United States Coast Guard (Wikipedia)", "url": "https://en.wikipedia.org/wiki/United_States_Coast_Guard" }
+  ],
+  "ifShortOnTime": "Use only the name and date cards (12 per patrol) and ask just discussion question 1.",
+  "lowVolunteerNote": "One leader can run it: both patrols race at once, and the leader scores with the answer key on screen.",
+  "linkedGames": []
+}

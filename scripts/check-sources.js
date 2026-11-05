@@ -41,7 +41,7 @@ const READER_TEXT_KEYS = new Set([
   "caption", "altText", "situation", "mission", "commandersIntent", "signals", "task", "role", "note",
   "notes", "change", "reasoning", "clue", "ifShortOnTime", "lowVolunteerNote", "siteDisplays",
   "teachingNote", "leaderNote", "positionsDisclaimer", "approximateNote", "closingPrompt", "materials",
-  "strengthNote", "sourceNote", "name", "text", "category"
+  "strengthNote", "sourceNote", "name", "text", "category", "cells", "points", "items", "columns", "promptLabel"
 ]);
 
 // Looks like a made-up casualty figure, e.g. "about 300 killed" or "1,200 casualties".
@@ -180,6 +180,31 @@ export function runCheck({ contentDirectory = DEFAULT_CONTENT_DIRECTORY, strict 
     if (image.rehostAllowed && image.localFile && !existsSync(path.join(repoRoot, image.localFile))) {
       addError(`${where} (image "${imageId}")`, `rehostAllowed is true but ${image.localFile} doesn't exist.`);
     }
+  }
+  // Answers shown on the projector must trace to facts: every prompt and every answer-key row names its fact.
+  for (const [moduleId, { record: module, where }] of modules) {
+    (module.prompts || []).forEach((prompt, index) => {
+      if (!prompt.factIds?.length) addError(`${where} (module "${moduleId}")`, `prompt ${index + 1} ("${truncate(prompt.text, 40)}") has no factIds. Its answer must point to the fact that backs it.`);
+    });
+    (module.reveal?.table?.rows || []).forEach((row, index) => {
+      if (!row.factIds?.length) addError(`${where} (module "${moduleId}")`, `answer-key row ${index + 1} ("${truncate(row.cells.join(" · "), 40)}") has no factIds.`);
+    });
+    if (module.reveal?.table && module.reveal.table.rows.some((row) => row.cells.length !== module.reveal.table.columns.length)) {
+      addError(`${where} (module "${moduleId}")`, "every answer-key row needs one cell per column.");
+    }
+    const afterPrompt = module.reveal?.afterPrompt;
+    if (afterPrompt !== undefined && (!module.prompts?.length || afterPrompt > module.prompts.length)) {
+      addError(`${where} (module "${moduleId}")`, `reveal.afterPrompt is ${afterPrompt}, but the module has ${module.prompts?.length || 0} prompt(s). Use 0 to ${module.prompts?.length || 0}, or remove it.`);
+    }
+    // Anything on the projector that rests on an unverified fact gets a warning, so a leader can decide before the meeting.
+    const projectorFactIds = [
+      ...(module.prompts || []).flatMap((prompt) => prompt.factIds || []),
+      ...(module.reveal?.factIds || []),
+      ...(module.reveal?.table?.rows || []).flatMap((row) => row.factIds || [])
+    ];
+    [...new Set(projectorFactIds)].filter((factId) => facts.get(factId)?.record.needsVerification).forEach((factId) => {
+      addWarning(`${where} (module "${moduleId}")`, `shows an answer on the projector that rests on unverified fact "${factId}".`);
+    });
   }
   for (const [sequenceId, { record: sequence, where }] of sequences) {
     const stepMinutes = (sequence.steps || []).reduce((total, step) => total + (step.minutes || 0), 0);

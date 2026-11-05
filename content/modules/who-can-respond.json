@@ -1,0 +1,85 @@
+{
+  "id": "who-can-respond",
+  "title": "Who can respond?",
+  "requirements": ["4"],
+  "durationMinutes": 12,
+  "activityType": ["competition", "discussion"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Green, yellow and red cards, one set per patrol"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Who can respond?",
+    "body": "A sheriff’s “posse” comes from posse comitatus, Latin for “the power of the county.” The Posse Comitatus Act of 1878 keeps federal troops out of police work at home, unless the Constitution or Congress allows it.",
+    "points": ["Green: the military can do it", "Red: civilian police only", "Yellow: only under a special exception"],
+    "images": []
+  },
+  "promptLabel": "Scenario",
+  "prompts": [
+    {
+      "text": "A tornado flattens a Missouri town. The governor sends the National Guard to clear roads and keep order.",
+      "answer": "Green. The National Guard under its governor’s command isn’t covered by the Act.",
+      "factIds": ["pca-national-guard"]
+    },
+    {
+      "text": "Army soldiers set up checkpoints on I-70 and write speeding tickets.",
+      "answer": "Red. That’s soldiers enforcing the law at home, which the Act forbids.",
+      "factIds": ["pca-rule"]
+    },
+    {
+      "text": "The Coast Guard boards a boat smuggling drugs off Florida.",
+      "answer": "Green. The Coast Guard is a law enforcement agency and isn’t covered by the Act.",
+      "factIds": ["pca-coast-guard"]
+    },
+    {
+      "text": "The Navy shares radar data to help police track a smuggling plane.",
+      "answer": "Green. A 1981 law allows this kind of indirect help, like intelligence and surveillance.",
+      "factIds": ["pca-1981-support"]
+    },
+    {
+      "text": "In 1957, the President sends the 101st Airborne to protect nine Black students entering Little Rock Central High School.",
+      "answer": "Yellow. Legal under the Insurrection Act exception.",
+      "factIds": ["pca-little-rock-1957", "pca-insurrection-act"]
+    },
+    {
+      "text": "Marines from a nearby base arrest a shoplifter at the mall.",
+      "answer": "Red. Since 2021 the Act names the Marine Corps directly; before that, Defense Department rules said the same.",
+      "factIds": ["pca-navy-marines-space-force", "pca-rule"]
+    },
+    {
+      "text": "Debrief: why would Americans want a law keeping soldiers out of police work?",
+      "answer": "The Declaration of Independence complains that the King “kept among us, in times of peace, Standing Armies without the Consent of our legislatures.”",
+      "factIds": ["declaration-standing-armies"]
+    }
+  ],
+  "leaderScript": [
+    "Read the opening screen. Point out where “posse” comes from.",
+    "Press → for each scenario. Patrols hold up a green, yellow or red card. Press R to reveal, and score a point for each right card.",
+    "After scenario 6, press → for the debrief question.",
+    "Leader note: this law has been in the news since 2025 over domestic troop deployments. Keep the discussion on the principle and the history, not current events or parties."
+  ],
+  "discussionQuestions": [
+    {
+      "question": "Which branches does the Act cover today?",
+      "answer": "The Army, Navy, Marine Corps, Air Force and Space Force. The Air Force was added in 1956; the Navy, Marines and Space Force in 2021. Not the Coast Guard.",
+      "factIds": ["pca-army-then-air-force", "pca-navy-marines-space-force", "pca-coast-guard"]
+    },
+    {
+      "question": "What happens to someone who breaks it?",
+      "answer": "A fine, up to two years in prison, or both.",
+      "factIds": ["pca-penalty"]
+    }
+  ],
+  "factIds": [
+    "pca-latin-meaning", "pca-signed-1878", "pca-rule", "pca-penalty", "pca-army-then-air-force",
+    "pca-navy-marines-space-force", "pca-coast-guard", "pca-national-guard", "pca-1981-support",
+    "pca-insurrection-act", "pca-little-rock-1957", "declaration-standing-armies"
+  ],
+  "moreInfo": [
+    { "label": "Posse Comitatus Act (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Posse_Comitatus_Act" },
+    { "label": "18 U.S.C. § 1385 (govinfo)", "url": "https://www.govinfo.gov/link/uscode/18/1385" }
+  ],
+  "ifShortOnTime": "Use scenarios 1, 2, 3 and 5, then the debrief.",
+  "lowVolunteerNote": "One leader is enough.",
+  "linkedGames": []
+}

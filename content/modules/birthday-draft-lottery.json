@@ -1,0 +1,80 @@
+{
+  "id": "birthday-draft-lottery",
+  "title": "Birthday draft lottery",
+  "requirements": ["3"],
+  "durationMinutes": 12,
+  "activityType": ["hands-on", "discussion"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Plastic eggs and a bucket", "Birthday slips: every boy’s, plus 20–30 family birthdays collected ahead of time", "Whiteboard with a blank draft-eras table"],
+  "printables": [],
+  "displayContent": {
+    "headline": "The birthday draw",
+    "body": "Every birthday is in an egg. We’ll draw them one at a time and post the order.",
+    "images": []
+  },
+  "promptLabel": "Question",
+  "prompts": [
+    {
+      "text": "Why would anyone draw birthdays out of a bucket?",
+      "answer": "On December 1, 1969, the Selective Service did exactly this, live on TV, with every day of the year. Men born 1944–1950 got a number by birthday, and low numbers were called first.",
+      "factIds": ["draft-1969-lottery", "draft-1969-televised"]
+    },
+    {
+      "text": "Was letting a man pay $300 to stay home fair? Who could afford it?",
+      "answer": "Let them argue. Anger over the rule helped spark the New York City draft riots in July 1863.",
+      "factIds": ["draft-1863-substitute", "draft-1863-riots"]
+    },
+    {
+      "text": "Is a lottery fairer than letting local boards choose? Why or why not?",
+      "answer": "No single right answer. The 1969 lottery replaced choosing with chance: your birthday decided your number.",
+      "factIds": ["draft-1969-lottery"]
+    },
+    {
+      "text": "For the Adventurers: what does the law ask of you at 18?",
+      "answer": "Men 18 through 25 must be registered with the Selective Service, and from December 2026 registration becomes automatic. Registering isn’t being drafted; nobody has been drafted since 1973.",
+      "factIds": ["draft-registration-now", "draft-automatic-registration", "draft-registration-not-draft"]
+    }
+  ],
+  "leaderScript": [
+    "Draw the eggs one at a time and post the order on the board.",
+    "Press → for the first question, R for the answer.",
+    "Press → for the draft-eras table. Fill in the board together first, then press R to check.",
+    "Then the three discussion questions.",
+    "Keep question 4 factual: registration is the law; a draft would be a separate decision. Stay off current politics."
+  ],
+  "discussionQuestions": [
+    {
+      "question": "What is conscription?",
+      "answer": "The draft: the law requiring people to serve, usually in the military.",
+      "factIds": ["draft-definition"]
+    }
+  ],
+  "reveal": {
+    "type": "table",
+    "title": "Four drafts",
+    "afterPrompt": 1,
+    "table": {
+      "columns": ["Era", "Law", "Who was eligible", "Notable rule"],
+      "rows": [
+        { "cells": ["Civil War", "Enrollment Act of 1863", "Men 20–45", "Could hire a substitute or pay $300 to avoid service"], "factIds": ["draft-1863-enrollment-act", "draft-1863-substitute"] },
+        { "cells": ["World War I", "Selective Service Act of 1917", "Men 21–30, later 18–45", "About 24 million registered; about 2.8 million drafted"], "factIds": ["draft-1917-act", "draft-1917-numbers"] },
+        { "cells": ["World War II", "Selective Training and Service Act of 1940", "Men 21–35 at first registration", "First peacetime draft in U.S. history"], "factIds": ["draft-1940-act", "draft-1940-numbers"] },
+        { "cells": ["Vietnam", "1969 draft lottery", "Men by birth date (born 1944–1950 in the first drawing)", "Random lottery; nobody drafted since 1973"], "factIds": ["draft-1969-lottery", "draft-ended-1973"] }
+      ]
+    }
+  },
+  "factIds": [
+    "draft-definition", "draft-1863-enrollment-act", "draft-1863-substitute", "draft-1863-riots", "draft-1917-act",
+    "draft-1917-numbers", "draft-1940-act", "draft-1940-numbers", "draft-1969-lottery", "draft-1969-televised",
+    "draft-ended-1973", "draft-registration-now", "draft-automatic-registration", "draft-registration-not-draft",
+    "draft-congress-must-act"
+  ],
+  "moreInfo": [
+    { "label": "Selective Service System (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Selective_Service_System" },
+    { "label": "Draft lottery (1969) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Draft_lottery_(1969)" }
+  ],
+  "ifShortOnTime": "Draw only the boys’ birthdays, show the eras table already filled in, and ask just question 4.",
+  "lowVolunteerNote": "One leader is enough.",
+  "linkedGames": []
+}

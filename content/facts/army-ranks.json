@@ -1,0 +1,73 @@
+[
+  {
+    "id": "rank-army-enlisted-order",
+    "statement": "Army enlisted ranks, lowest to highest: Private (E-1), Private (E-2), Private First Class (E-3), Specialist or Corporal (E-4), Sergeant (E-5), Staff Sergeant (E-6), Sergeant First Class (E-7), Master Sergeant or First Sergeant (E-8), Sergeant Major or Command Sergeant Major (E-9).",
+    "sourceId": "army-ranks",
+    "corroboratingSources": [
+      { "title": "United States Army enlisted rank insignia", "url": "https://en.wikipedia.org/wiki/United_States_Army_enlisted_rank_insignia", "publisher": "Wikipedia", "location": "Pay grades" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["20"],
+    "tags": ["ranks"],
+    "leaderNote": "The top enlisted job, Sergeant Major of the Army, is also E-9; mention it only if a boy asks."
+  },
+  {
+    "id": "rank-army-enlisted-insignia",
+    "statement": "Army enlisted insignia: Private (E-1) wears none; Private (E-2) one chevron; Private First Class one chevron above one rocker; Specialist an eagle on a shield shape; Corporal two chevrons; Sergeant three chevrons; Staff Sergeant three chevrons above one rocker; Sergeant First Class three chevrons above two rockers; Master Sergeant three chevrons above three rockers; First Sergeant the same with a diamond; Sergeant Major the same with a star; Command Sergeant Major a star inside a wreath.",
+    "sourceId": "ar670-enlisted-insignia",
+    "sourceLocation": "DA PAM 670-1, para. 21-7a",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["20"],
+    "tags": ["ranks"],
+    "leaderNote": "The regulation says “arcs”; soldiers call them rockers. The source site is an unofficial copy of the Army pamphlet."
+  },
+  {
+    "id": "rank-army-officer-insignia",
+    "statement": "Army officer ranks and insignia: Second Lieutenant (O-1) one gold bar; First Lieutenant (O-2) one silver bar; Captain (O-3) two silver bars; Major (O-4) gold oak leaf; Lieutenant Colonel (O-5) silver oak leaf; Colonel (O-6) silver eagle; Brigadier General (O-7) one star; Major General (O-8) two stars; Lieutenant General (O-9) three stars; General (O-10) four stars.",
+    "sourceId": "wiki-army-officer-insignia",
+    "corroboratingSources": [
+      { "title": "Captain (United States O-3)", "url": "https://en.wikipedia.org/wiki/Captain_(United_States_O-3)", "publisher": "Wikipedia", "location": "Two silver bars" },
+      { "title": "General officers in the United States", "url": "https://en.wikipedia.org/wiki/General_officers_in_the_United_States", "publisher": "Wikipedia", "location": "One- to four-star grades" },
+      { "title": "U.S. Army Ranks", "url": "https://www.army.mil/ranks/", "publisher": "U.S. Army", "location": "Rank order" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["20"],
+    "tags": ["ranks"]
+  },
+  {
+    "id": "rank-gold-below-silver",
+    "statement": "In Army officer insignia, silver outranks gold: a second lieutenant’s gold bar is below a first lieutenant’s silver bar, and a major’s gold oak leaf is below a lieutenant colonel’s silver oak leaf.",
+    "sourceId": "wiki-army-officer-insignia",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["20"],
+    "tags": ["ranks"]
+  },
+  {
+    "id": "rank-warrant-officers",
+    "statement": "Warrant officers (W-1 to W-5) are highly skilled technical experts. They rank above all enlisted soldiers and below second lieutenants.",
+    "sourceId": "wiki-warrant-officer",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["20"],
+    "tags": ["ranks"]
+  },
+  {
+    "id": "rank-officers-role",
+    "statement": "Army officers hold a commission, earned through ROTC, West Point, Officer Candidate School or a direct commission, and need a bachelor’s degree by the time they’re commissioned. They plan missions and lead.",
+    "sourceId": "goarmy-become-an-officer",
+    "corroboratingSources": [
+      { "title": "U.S. Army Ranks", "url": "https://www.army.mil/ranks/", "publisher": "U.S. Army" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["20"],
+    "tags": ["ranks"]
+  },
+  {
+    "id": "rank-ncos-role",
+    "statement": "Noncommissioned officers (NCOs) are enlisted soldiers who have risen to corporal or higher. Sergeants are first-line leaders who train and lead soldiers day to day. The Army calls its enlisted soldiers “the backbone of the Army.”",
+    "sourceId": "army-ranks",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["20"],
+    "tags": ["ranks"],
+    "leaderNote": "The leader guide calls NCOs “the backbone of the Army.” The Army’s rank page says it of enlisted soldiers in general, so the site words it that way."
+  }
+]

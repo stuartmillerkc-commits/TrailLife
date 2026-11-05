@@ -1,0 +1,117 @@
+[
+  {
+    "id": "pca-latin-meaning",
+    "statement": "“Posse comitatus” is Latin for “the power of the county”: the citizens a sheriff can call on to help keep the peace. A sheriff’s “posse” takes its name from it.",
+    "sourceId": "lii-posse-comitatus",
+    "corroboratingSources": [
+      { "title": "Posse comitatus", "url": "https://en.wikipedia.org/wiki/Posse_comitatus", "publisher": "Wikipedia", "location": "Translates it “force of the county”; describes Old West posses" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-signed-1878",
+    "statement": "President Rutherford B. Hayes signed the Posse Comitatus Act on June 18, 1878, after Reconstruction.",
+    "sourceId": "wiki-posse-comitatus-act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-rule",
+    "statement": "The Posse Comitatus Act bars using the federal military to enforce laws inside the U.S., except where the Constitution or an act of Congress expressly allows it.",
+    "sourceId": "wiki-posse-comitatus-act",
+    "sourceLocation": "Current text of 18 U.S.C. § 1385",
+    "corroboratingSources": [
+      { "title": "18 U.S.C. § 1385", "url": "https://www.govinfo.gov/link/uscode/18/1385", "publisher": "U.S. Government Publishing Office" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-penalty",
+    "statement": "Breaking the Posse Comitatus Act can bring a fine, up to two years in prison, or both.",
+    "sourceId": "wiki-posse-comitatus-act",
+    "sourceLocation": "Current text of 18 U.S.C. § 1385",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-army-then-air-force",
+    "statement": "The 1878 law covered the Army. A 1956 amendment added the Air Force.",
+    "sourceId": "wiki-posse-comitatus-act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-navy-marines-space-force",
+    "statement": "The Navy and Marine Corps followed the same rule by Defense Department regulation until the FY2022 defense bill, signed December 27, 2021, wrote them and the Space Force into the law.",
+    "sourceId": "wiki-posse-comitatus-act",
+    "corroboratingSources": [
+      { "title": "Biden Signs FY2022 Defense Policy Bill Into Law", "url": "https://spacepolicyonline.com/news/biden-signs-fy2022-defense-policy-bill-into-law/", "publisher": "SpacePolicyOnline", "location": "Signing date" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-coast-guard",
+    "statement": "The Coast Guard isn’t covered by the Posse Comitatus Act. It is a law enforcement agency with its own authority to enforce federal law.",
+    "sourceId": "wiki-posse-comitatus-act",
+    "corroboratingSources": [
+      { "title": "United States Coast Guard", "url": "https://en.wikipedia.org/wiki/United_States_Coast_Guard", "publisher": "Wikipedia", "location": "Cites 14 U.S.C. § 102" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-national-guard",
+    "statement": "While the National Guard is under its state governor’s command, the Posse Comitatus Act doesn’t apply to it.",
+    "sourceId": "wiki-posse-comitatus-act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-1981-support",
+    "statement": "A December 1981 law lets the military give police indirect help, such as equipment, intelligence and surveillance, while still generally barring troops from taking part in law enforcement themselves.",
+    "sourceId": "wiki-posse-comitatus-act",
+    "sourceLocation": "Military Cooperation with Civilian Law Enforcement Agencies Act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-insurrection-act",
+    "statement": "The Insurrection Act is a legal exception to the Posse Comitatus Act. Under it, the President can use troops at home in certain emergencies.",
+    "sourceId": "wiki-insurrection-act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"]
+  },
+  {
+    "id": "pca-little-rock-1957",
+    "statement": "In 1957 President Eisenhower invoked the Insurrection Act and sent the 101st Airborne Division to Little Rock, Arkansas, to protect the nine Black students integrating Central High School.",
+    "sourceId": "eisenhower-library-little-rock",
+    "corroboratingSources": [
+      { "title": "Insurrection Act of 1807", "url": "https://en.wikipedia.org/wiki/Insurrection_Act_of_1807", "publisher": "Wikipedia", "location": "Proclamation 3204 invoked the Act for Little Rock" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus"],
+    "leaderNote": "The Wikipedia Posse Comitatus article describes the Little Rock authority as an exception “derived from the Enforcement Acts”; those acts are part of how the Insurrection Act reached its current form, so the two accounts don’t conflict."
+  },
+  {
+    "id": "declaration-standing-armies",
+    "statement": "The Declaration of Independence complains that the King “has kept among us, in times of peace, Standing Armies without the Consent of our legislatures.”",
+    "sourceId": "nara-declaration",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["4"],
+    "tags": ["posse-comitatus", "founding"]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ephesians-armor",
+    "statement": "Ephesians 6:13–17 lists the armor of God: the belt of truth, the breastplate of righteousness, shoes of readiness from the gospel of peace, the shield of faith, the helmet of salvation, and the sword of the Spirit, which is the word of God.",
+    "sourceId": "esv-ephesians-6",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["23"],
+    "tags": ["armor-of-god"]
+  },
+  {
+    "id": "ephesians-prayer",
+    "statement": "Ephesians 6:18 follows the armor with a call to pray at all times and to keep alert.",
+    "sourceId": "esv-ephesians-6",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["23"],
+    "tags": ["armor-of-god"]
+  },
+  {
+    "id": "roman-shield-formation",
+    "statement": "Roman soldiers could line up their shields edge to edge into a packed formation covered on the front and top, called the testudo.",
+    "sourceId": "wiki-testudo",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["23"],
+    "tags": ["armor-of-god"]
+  }
+]

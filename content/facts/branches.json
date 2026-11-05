@@ -1,5 +1,114 @@
 [
   {
+    "id": "branch-count-six",
+    "statement": "The U.S. Armed Forces have six branches: the Army, Navy, Marine Corps, Air Force, Space Force and Coast Guard.",
+    "sourceId": "wiki-us-armed-forces",
+    "sourceLocation": "Lead section",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches"]
+  },
+  {
+    "id": "badge-sheet-five-branches",
+    "statement": "The Military Heritage badge sheet is dated 2018 and says there are five branches of the Armed Forces.",
+    "needsVerification": true,
+    "requirements": ["1"],
+    "tags": ["branches", "badge"],
+    "leaderNote": "Taken from the leader guide. The badge sheet is copyrighted and not online, so it couldn’t be checked automatically. Confirm against your printed sheet or Trail Life Connect."
+  },
+  {
+    "id": "branch-army-founded",
+    "statement": "The Army traces its start to the Continental Army, created June 14, 1775. It is the oldest and largest branch.",
+    "sourceId": "wiki-us-armed-forces",
+    "sourceLocation": "Lead section and “Military departments and services”",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "army"]
+  },
+  {
+    "id": "branch-army-role",
+    "statement": "The Army is the land branch: it fights and holds ground.",
+    "sourceId": "wiki-us-armed-forces",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "army"]
+  },
+  {
+    "id": "branch-navy-founded",
+    "statement": "The Navy traces its start to the Continental Navy, established October 13, 1775.",
+    "sourceId": "wiki-us-armed-forces",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "navy"],
+    "leaderNote": "The wrinkle if a boy asks: the Continental forces disbanded after the Revolution, and Congress created today’s Navy on March 27, 1794. The Navy still counts its birthday from 1775."
+  },
+  {
+    "id": "branch-navy-role",
+    "statement": "The Navy is the sea branch. It runs the world’s largest fleet of aircraft carriers, along with submarines and surface ships.",
+    "sourceId": "wiki-us-navy",
+    "sourceLocation": "Lead section",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "navy"]
+  },
+  {
+    "id": "branch-marines-founded",
+    "statement": "The Marine Corps traces its start to the Continental Marines, formed November 10, 1775. It celebrates November 10 as its birthday.",
+    "sourceId": "wiki-us-marine-corps",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1", "5"],
+    "tags": ["branches", "marines", "holidays"],
+    "leaderNote": "The Continental Marines disbanded in 1783; Congress re-created the Corps on July 11, 1798."
+  },
+  {
+    "id": "branch-marines-role",
+    "statement": "The Marine Corps specializes in expeditionary and amphibious operations: moving from sea to land fast to answer a crisis. It is part of the Department of the Navy.",
+    "sourceId": "wiki-us-marine-corps",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "marines"]
+  },
+  {
+    "id": "branch-coast-guard-founded",
+    "statement": "The Coast Guard traces its start to the Revenue-Marine (later the Revenue Cutter Service), created August 4, 1790. It took the name Coast Guard in 1915, when it merged with the Life-Saving Service.",
+    "sourceId": "wiki-us-coast-guard",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "coast-guard"]
+  },
+  {
+    "id": "branch-coast-guard-dhs",
+    "statement": "In peacetime the Coast Guard is part of the Department of Homeland Security, not the Department of Defense. The President or Congress can move it to the Navy in wartime.",
+    "sourceId": "wiki-us-coast-guard",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "coast-guard"]
+  },
+  {
+    "id": "branch-coast-guard-role",
+    "statement": "The Coast Guard enforces federal law at sea, leads search and rescue on the water, and protects ports and waterways.",
+    "sourceId": "wiki-us-coast-guard",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "coast-guard"]
+  },
+  {
+    "id": "branch-air-force-founded",
+    "statement": "The Air Force became a separate branch on September 18, 1947, formed from the Army Air Forces under the National Security Act of 1947.",
+    "sourceId": "wiki-us-air-force",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "air-force"]
+  },
+  {
+    "id": "branch-air-force-role",
+    "statement": "The Air Force’s core missions include air superiority, rapid global mobility (airlift and air refueling) and global strike.",
+    "sourceId": "wiki-us-air-force",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "air-force"]
+  },
+  {
     "id": "branch-space-force",
     "statement": "The Space Force, one of the six U.S. armed forces, was established on December 20, 2019, when the National Defense Authorization Act for Fiscal Year 2020 became law.",
     "source": {
@@ -21,5 +130,30 @@
     "requirements": ["1"],
     "tags": ["branches"],
     "leaderNote": "PLAN.md cites spaceforce.mil for this fact; that site blocks automated checks, so it wasn’t re-read on 2026-11-04. Worth a manual look."
+  },
+  {
+    "id": "branch-space-force-from-air-force",
+    "statement": "The Space Force was formed from Air Force Space Command, which was renamed the Space Force in December 2019. It sits inside the Department of the Air Force, and its members are called Guardians.",
+    "sourceId": "wiki-us-space-force",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "space-force"]
+  },
+  {
+    "id": "branch-space-force-role",
+    "statement": "The Space Force’s missions include running military satellites, positioning, navigation and timing, and warning of missile attacks.",
+    "sourceId": "wiki-us-space-force",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "space-force"]
+  },
+  {
+    "id": "branch-space-force-gps",
+    "statement": "GPS, the satellite system phones use to find their location, is owned by the U.S. Space Force.",
+    "sourceId": "wiki-gps",
+    "sourceLocation": "Lead section",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["1"],
+    "tags": ["branches", "space-force"]
   }
 ]

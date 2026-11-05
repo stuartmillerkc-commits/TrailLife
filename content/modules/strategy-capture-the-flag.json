@@ -1,0 +1,49 @@
+{
+  "id": "strategy-capture-the-flag",
+  "title": "Strategy session and capture the flag",
+  "requirements": ["22"],
+  "durationMinutes": 30,
+  "activityType": ["competition", "outdoor", "discussion"],
+  "setting": "either",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["2 flags", "Cones or lights for the boundary", "Glow sticks for flags and players if outdoors", "One plan sheet and pencil per patrol"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Plan, play, review",
+    "body": "8 minutes to plan. Write it all on one sheet.",
+    "points": [
+      "Commander’s intent: one sentence. How do we win?",
+      "Roles: attack, defense, scout, jail guard",
+      "One silent signal",
+      "A fallback if the flag carrier is tagged"
+    ],
+    "images": []
+  },
+  "promptLabel": "Review",
+  "prompts": [
+    {
+      "text": "After-action review: What was supposed to happen? What actually happened? Why was there a difference? What will we do differently next time?",
+      "answer": "Each patrol answers all four, then revises its plan for round 2.",
+      "factIds": ["aar-four-questions"]
+    },
+    {
+      "text": "Final review: did your change work?",
+      "answer": "Compare round 1 and round 2. That revision is the part that meets the requirement’s “what improvements could be used next time.”",
+      "factIds": ["aar-four-questions"]
+    }
+  ],
+  "leaderScript": [
+    "Plan (8 min): each patrol writes its plan on one sheet, using the four points on screen.",
+    "Play round 1 (7 min): two-hand touch, a jail on each side, flags visible.",
+    "Press → for the after-action review. Patrols answer the four questions and revise their plan.",
+    "Play round 2 (7 min).",
+    "Press → for the final review: did the change work?",
+    "Light: in Independence the sun sets about 5:06 p.m. in mid-November. Play in a gym, or outdoors with glow sticks on flags and players, a lit boundary, and buddy pairs."
+  ],
+  "discussionQuestions": [],
+  "factIds": ["aar-four-questions", "sunset-independence-november-2026"],
+  "moreInfo": [],
+  "ifShortOnTime": "Protect this block. Cut the rank race first.",
+  "lowVolunteerNote": "Two adults are better for safety outdoors in the dark: one at each end of the field.",
+  "linkedGames": []
+}

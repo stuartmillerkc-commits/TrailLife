@@ -1,0 +1,27 @@
+{
+  "id": "teach-back-prayer",
+  "title": "Teach-back and prayer",
+  "requirements": [],
+  "durationMinutes": 5,
+  "activityType": ["discussion", "devotional"],
+  "setting": "indoor",
+  "patrolLevels": ["navigator", "adventurer"],
+  "materials": ["Teach-back deck: reuse the branch, academy and holiday cards"],
+  "printables": [],
+  "displayContent": {
+    "headline": "Teach it back",
+    "body": "Draw a card. You have 30 seconds to explain it to the group.",
+    "images": []
+  },
+  "leaderScript": [
+    "Each boy draws one card (a branch, an academy or a holiday) and explains it to the group in 30 seconds.",
+    "Note which boys can explain which items. Group exposure isn’t sign-off; this is what the mentor needs to see.",
+    "Close by praying for those serving now and for families who lost someone."
+  ],
+  "discussionQuestions": [],
+  "factIds": [],
+  "moreInfo": [],
+  "ifShortOnTime": "Have half the boys teach back tonight and the rest at the start of Meeting 2.",
+  "lowVolunteerNote": "One leader is enough.",
+  "linkedGames": []
+}

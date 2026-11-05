@@ -1,0 +1,147 @@
+[
+  {
+    "id": "draft-definition",
+    "statement": "Conscription, called the draft in America, is when the law requires people to serve, usually in the military.",
+    "sourceId": "wiki-conscription",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-1863-enrollment-act",
+    "statement": "The Enrollment Act, signed by President Abraham Lincoln on March 3, 1863, made men 20 to 45 subject to the Civil War draft.",
+    "sourceId": "wiki-enrollment-act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-1863-substitute",
+    "statement": "Under the 1863 law, a drafted man could avoid service by hiring a substitute or paying $300.",
+    "sourceId": "wiki-enrollment-act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-1863-riots",
+    "statement": "Anger over the draft helped spark the New York City draft riots of July 13–16, 1863.",
+    "sourceId": "wiki-enrollment-act",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-1917-act",
+    "statement": "The Selective Service Act of May 18, 1917, first registered men 21 to 30. A 1918 registration widened it to men 18 to 45.",
+    "sourceId": "wiki-selective-service-system",
+    "verifiedOn": "2026-11-04",
+    "disagreement": {
+      "alternatives": [
+        {
+          "statement": "The first registration, on June 5, 1917, covered men between 21 and 31.",
+          "sourceId": "nara-ww1-draft-registration"
+        }
+      ],
+      "siteDisplays": "The fact’s own statement (21 to 30, as Wikipedia and the leader guide give it). The National Archives says “between 21 and 31.”",
+      "teachingNote": "Both are probably describing the same men: the law covered ages 21 through 30, meaning up to a man’s 31st birthday. A good example of how two careful sources can word one rule differently."
+    },
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-1917-numbers",
+    "statement": "About 24 million men registered for the World War I draft, and about 2.8 million were drafted.",
+    "sourceId": "nara-ww1-draft-registration",
+    "corroboratingSources": [
+      { "title": "Selective Service System", "url": "https://en.wikipedia.org/wiki/Selective_Service_System", "publisher": "Wikipedia", "location": "Inductions table: 2,810,296 for World War I" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-1940-act",
+    "statement": "President Franklin Roosevelt signed the Selective Training and Service Act on September 16, 1940, the first peacetime draft in U.S. history. The first registration, on October 16, 1940, covered men 21 through 35.",
+    "sourceId": "wiki-selective-training-service-act-1940",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-1940-numbers",
+    "statement": "More than 10 million men were drafted under the 1940 law between 1940 and 1947.",
+    "sourceId": "wiki-selective-training-service-act-1940",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"],
+    "leaderNote": "The leader guide says “about 10 million by the war’s end.” The source’s count runs to March 1947, past the end of the war, so the site gives that period instead."
+  },
+  {
+    "id": "draft-1969-lottery",
+    "statement": "On December 1, 1969, the Selective Service held a draft lottery. Capsules holding every day of the year were drawn one at a time. Men born 1944–1950 got a number by birthday, and low numbers were called first.",
+    "sourceId": "wiki-draft-lottery-1969",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-1969-televised",
+    "statement": "The 1969 drawing was carried live on CBS television and followed on radio.",
+    "sourceId": "historynet-lottery-night-1969",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-ended-1973",
+    "statement": "No new draft orders were issued after 1972, and in January 1973 the U.S. moved to an all-volunteer military. Nobody has been drafted since 1973.",
+    "sourceId": "wiki-selective-service-system",
+    "corroboratingSources": [
+      { "title": "Automatic registration for US military draft-eligible men to begin in December", "url": "https://www.marinecorpstimes.com/news/your-military/2026/04/08/automatic-registration-for-us-military-draft-eligible-men-to-begin-in-december/", "publisher": "Marine Corps Times" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-registration-now",
+    "statement": "Almost all men ages 18 through 25 living in the U.S. must be registered with the Selective Service.",
+    "sourceId": "mct-automatic-registration",
+    "corroboratingSources": [
+      { "title": "Selective Service System", "url": "https://en.wikipedia.org/wiki/Selective_Service_System", "publisher": "Wikipedia" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"]
+  },
+  {
+    "id": "draft-automatic-registration",
+    "statement": "The FY2026 National Defense Authorization Act, signed in December 2025, makes Selective Service registration automatic starting in December 2026.",
+    "sourceId": "mct-automatic-registration",
+    "corroboratingSources": [
+      { "title": "Selective Service System", "url": "https://en.wikipedia.org/wiki/Selective_Service_System", "publisher": "Wikipedia", "location": "Gives the start as December 18, 2026" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"],
+    "leaderNote": "The leader guide gives the signing date as December 18, 2025. A web search attributes that date to a Selective Service statement, but the statement itself couldn’t be opened, so the site says “December 2025.” Check sss.gov for the start date nearer the time; the rule was still being finalized in April 2026."
+  },
+  {
+    "id": "draft-registration-not-draft",
+    "statement": "Registering is not being drafted. Selective Service keeps a list of men who could be called in a national emergency; nobody has been drafted since 1973.",
+    "sourceId": "mct-automatic-registration",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["3"],
+    "tags": ["conscription"],
+    "leaderNote": "See draft-congress-must-act for the leader guide’s extra point about Congress."
+  },
+  {
+    "id": "draft-congress-must-act",
+    "statement": "Before anyone could be drafted again, Congress would have to pass a law allowing it.",
+    "needsVerification": true,
+    "requirements": ["3"],
+    "tags": ["conscription"],
+    "leaderNote": "From the leader guide. A web search attributes this to a Selective Service statement, but sss.gov refused the connection on 2026-11-04, so it couldn’t be read. Say it as “as I understand it” until confirmed."
+  }
+]

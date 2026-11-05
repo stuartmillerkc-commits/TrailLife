@@ -30,5 +30,69 @@
     "localFile": "sources/wilsons-creek-staff-ride.pdf",
     "license": "public-domain",
     "notes": "Optional battle. Order of battle and timed maps 0500–1130."
-  }
+  },
+
+  { "id": "wiki-us-armed-forces", "title": "United States Armed Forces", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_Armed_Forces", "license": "open-license", "notes": "Founding dates of all six branches; Army as largest and oldest; Coast Guard under DHS in peacetime." },
+  { "id": "wiki-us-navy", "title": "United States Navy", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_Navy", "license": "open-license" },
+  { "id": "wiki-us-marine-corps", "title": "United States Marine Corps", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_Marine_Corps", "license": "open-license" },
+  { "id": "wiki-us-coast-guard", "title": "United States Coast Guard", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_Coast_Guard", "license": "open-license" },
+  { "id": "wiki-us-air-force", "title": "United States Air Force", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_Air_Force", "license": "open-license" },
+  { "id": "wiki-us-space-force", "title": "United States Space Force", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_Space_Force", "license": "open-license" },
+  { "id": "wiki-gps", "title": "Global Positioning System", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Global_Positioning_System", "license": "open-license" },
+
+  { "id": "wiki-service-academies", "title": "United States service academies", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_service_academies", "license": "open-license" },
+  { "id": "wiki-usma-alumni", "title": "List of United States Military Academy alumni", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/List_of_United_States_Military_Academy_alumni", "license": "open-license" },
+  { "id": "wiki-usna-alumni", "title": "List of United States Naval Academy alumni", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/List_of_United_States_Naval_Academy_alumni", "license": "open-license" },
+  { "id": "wiki-usafa-alumni", "title": "List of United States Air Force Academy alumni", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/List_of_United_States_Air_Force_Academy_alumni", "license": "open-license" },
+  { "id": "wiki-chester-nimitz", "title": "Chester W. Nimitz", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Chester_W._Nimitz", "license": "open-license" },
+  { "id": "goarmy-become-an-officer", "title": "Army Officers: How to Become an Officer", "publisher": "U.S. Army (goarmy.com)", "url": "https://www.goarmy.com/careers-and-jobs/become-an-officer", "license": "public-domain" },
+
+  { "id": "wiki-memorial-day", "title": "Memorial Day", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Memorial_Day", "license": "open-license" },
+  { "id": "va-logan-general-order-11", "title": "General Order No. 11 (Memorial Day order)", "publisher": "U.S. Department of Veterans Affairs, National Cemetery Administration", "url": "https://www.cem.va.gov/history/memdayorder.asp", "license": "public-domain" },
+  { "id": "wiki-uniform-monday-holiday-act", "title": "Uniform Monday Holiday Act", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Uniform_Monday_Holiday_Act", "license": "open-license" },
+  { "id": "govinfo-veterans-day", "title": "Veterans Day (feature)", "publisher": "U.S. Government Publishing Office (govinfo)", "url": "https://www.govinfo.gov/features/veterans-day", "license": "public-domain", "notes": "Replaces the leader guide’s Grand Forks AFB link, which refused automated checks (403) on 2026-11-04." },
+  { "id": "wiki-veterans-day", "title": "Veterans Day", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Veterans_Day", "license": "open-license" },
+  { "id": "wiki-armed-forces-day", "title": "Armed Forces Day", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Armed_Forces_Day", "license": "open-license" },
+  { "id": "wiki-pow-mia-day", "title": "National POW/MIA Recognition Day", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/National_POW/MIA_Recognition_Day", "license": "open-license" },
+  { "id": "wiki-gold-star-mothers-day", "title": "Gold Star Mother’s Day", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Gold_Star_Mother%27s_Day", "license": "open-license" },
+  { "id": "wiki-pearl-harbor-day", "title": "National Pearl Harbor Remembrance Day", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/National_Pearl_Harbor_Remembrance_Day", "license": "open-license" },
+  { "id": "opm-federal-holidays", "title": "Federal Holidays", "publisher": "U.S. Office of Personnel Management", "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/", "license": "public-domain" },
+
+  { "id": "anc-history", "title": "History of Arlington National Cemetery", "publisher": "Arlington National Cemetery (U.S. Army)", "url": "https://www.arlingtoncemetery.mil/Explore/History-of-Arlington-National-Cemetery", "license": "public-domain", "notes": "Replaces the leader guide’s NPS and National Archives Foundation links, both of which returned 404 on 2026-11-04." },
+  { "id": "anc-tomb", "title": "Tomb of the Unknown Soldier", "publisher": "Arlington National Cemetery (U.S. Army)", "url": "https://www.arlingtoncemetery.mil/Explore/Tomb-of-the-Unknown-Soldier", "license": "public-domain" },
+  { "id": "army-tomb-of-the-unknowns", "title": "The Tomb of the Unknowns", "publisher": "U.S. Army (army.mil)", "url": "https://www.army.mil/article/38013", "license": "public-domain" },
+  { "id": "militarytimes-tomb-guard-1937", "title": "American Legion secured a 24-hour guard for the Tomb of the Unknown Soldier 82 years ago today", "publisher": "Military Times", "year": 2019, "url": "https://www.militarytimes.com/news/your-military/2019/07/02/american-legion-secured-a-24-hour-guard-for-the-tomb-of-the-unknown-soldier-82-years-ago-today/", "license": "copyrighted-facts-only" },
+  { "id": "wiki-william-christman", "title": "William Henry Christman", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/William_Henry_Christman", "license": "open-license" },
+
+  { "id": "nara-gi-bill", "title": "Servicemen’s Readjustment Act (1944)", "publisher": "National Archives (Milestone Documents)", "url": "https://www.archives.gov/milestone-documents/servicemens-readjustment-act", "license": "public-domain" },
+  { "id": "va-post-911-gi-bill", "title": "Post-9/11 GI Bill (Chapter 33)", "publisher": "U.S. Department of Veterans Affairs", "url": "https://www.va.gov/education/about-gi-bill-benefits/post-9-11/", "license": "public-domain" },
+
+  { "id": "wiki-conscription", "title": "Conscription", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Conscription", "license": "open-license" },
+  { "id": "wiki-selective-service-system", "title": "Selective Service System", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Selective_Service_System", "license": "open-license", "notes": "Listed in the leader guide’s Sources section." },
+  { "id": "wiki-enrollment-act", "title": "Enrollment Act", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Enrollment_Act", "license": "open-license" },
+  { "id": "nara-ww1-draft-registration", "title": "World War I Selective Service System Draft Registration Cards", "publisher": "National Archives", "url": "https://www.archives.gov/research/military/ww1/draft-registration", "license": "public-domain" },
+  { "id": "wiki-selective-training-service-act-1940", "title": "Selective Training and Service Act of 1940", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Selective_Training_and_Service_Act_of_1940", "license": "open-license" },
+  { "id": "wiki-draft-lottery-1969", "title": "Draft lottery (1969)", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Draft_lottery_(1969)", "license": "open-license" },
+  { "id": "historynet-lottery-night-1969", "title": "Live from D.C., It’s Lottery Night 1969!", "publisher": "HistoryNet", "url": "https://www.historynet.com/live-from-dc-its-lottery-night-1969/", "license": "copyrighted-facts-only" },
+  { "id": "mct-automatic-registration", "title": "Automatic registration for US military draft-eligible men to begin in December", "publisher": "Marine Corps Times", "year": 2026, "url": "https://www.marinecorpstimes.com/news/your-military/2026/04/08/automatic-registration-for-us-military-draft-eligible-men-to-begin-in-december/", "license": "copyrighted-facts-only", "notes": "Listed in the leader guide’s Sources section." },
+
+  { "id": "wiki-posse-comitatus-act", "title": "Posse Comitatus Act", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Posse_Comitatus_Act", "license": "open-license", "notes": "Listed in the leader guide’s Sources section. Quotes the current text of 18 U.S.C. § 1385." },
+  { "id": "govinfo-18-usc-1385", "title": "18 U.S.C. § 1385: Use of Army, Navy, Marine Corps, Air Force, and Space Force as posse comitatus", "publisher": "U.S. Government Publishing Office (govinfo)", "url": "https://www.govinfo.gov/link/uscode/18/1385", "license": "public-domain", "notes": "Listed in the leader guide’s Sources section. The link serves a PDF whose text couldn’t be read by the automated check on 2026-11-04; the statute text was read via the Wikipedia article instead." },
+  { "id": "lii-posse-comitatus", "title": "posse comitatus (Wex legal dictionary)", "publisher": "Legal Information Institute, Cornell Law School", "url": "https://www.law.cornell.edu/wex/posse_comitatus", "license": "copyrighted-facts-only" },
+  { "id": "wiki-insurrection-act", "title": "Insurrection Act of 1807", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Insurrection_Act_of_1807", "license": "open-license" },
+  { "id": "eisenhower-library-little-rock", "title": "Civil Rights: The Little Rock School Integration Crisis", "publisher": "Dwight D. Eisenhower Presidential Library", "url": "https://www.eisenhowerlibrary.gov/research/online-documents/civil-rights-little-rock-school-integration-crisis", "license": "public-domain" },
+  { "id": "spacepolicyonline-fy2022-ndaa", "title": "Biden Signs FY2022 Defense Policy Bill Into Law", "publisher": "SpacePolicyOnline", "year": 2021, "url": "https://spacepolicyonline.com/news/biden-signs-fy2022-defense-policy-bill-into-law/", "license": "copyrighted-facts-only" },
+  { "id": "nara-declaration", "title": "Declaration of Independence: A Transcription", "publisher": "National Archives", "url": "https://www.archives.gov/founding-docs/declaration-transcript", "license": "public-domain" },
+
+  { "id": "army-ranks", "title": "U.S. Army Ranks", "publisher": "U.S. Army (army.mil)", "url": "https://www.army.mil/ranks/", "license": "public-domain" },
+  { "id": "ar670-enlisted-insignia", "title": "DA PAM 670-1, para. 21-7: Grade insignia for enlisted personnel", "publisher": "AR670.com (unofficial reproduction of DA PAM 670-1)", "url": "https://ar670.com/guide/da-pam-670-1-21-7-grade-insignia-for-enlisted-personnel/", "license": "public-domain", "notes": "Not an Army site. It reproduces the regulation text; check the official DA PAM 670-1 PDF if in doubt." },
+  { "id": "wiki-army-officer-insignia", "title": "United States Army officer rank insignia", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_Army_officer_rank_insignia", "license": "open-license" },
+  { "id": "wiki-army-enlisted-insignia", "title": "United States Army enlisted rank insignia", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/United_States_Army_enlisted_rank_insignia", "license": "open-license" },
+  { "id": "wiki-captain-o3", "title": "Captain (United States O-3)", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Captain_(United_States_O-3)", "license": "open-license" },
+  { "id": "wiki-general-officers", "title": "General officers in the United States", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/General_officers_in_the_United_States", "license": "open-license" },
+  { "id": "wiki-warrant-officer", "title": "Warrant officer (United States)", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Warrant_officer_(United_States)", "license": "open-license" },
+
+  { "id": "esv-ephesians-6", "title": "Ephesians 6:13–18 (ESV)", "publisher": "Bible Gateway", "url": "https://www.biblegateway.com/passage/?search=Ephesians+6%3A13-18&version=ESV", "license": "copyrighted-facts-only", "notes": "Paraphrase or quote briefly; the ESV text is copyrighted." },
+  { "id": "wiki-testudo", "title": "Testudo formation", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Testudo_formation", "license": "open-license" },
+  { "id": "sunrise-sunset-independence-2026-11", "title": "Sunrise and sunset times in Independence, MO, November 2026", "publisher": "sunrise-sunset.org", "url": "https://sunrise-sunset.org/us/independence-mo/2026/11", "license": "copyrighted-facts-only" }
 ]

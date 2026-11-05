@@ -1,0 +1,64 @@
+[
+  {
+    "id": "academy-west-point",
+    "statement": "The U.S. Military Academy was founded in 1802 at West Point, New York. Its graduates become Army officers.",
+    "sourceId": "wiki-service-academies",
+    "corroboratingSources": [
+      { "title": "Army Officers: How to Become an Officer", "url": "https://www.goarmy.com/careers-and-jobs/become-an-officer", "publisher": "U.S. Army (goarmy.com)" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["2"],
+    "tags": ["academies"]
+  },
+  {
+    "id": "academy-naval",
+    "statement": "The U.S. Naval Academy was founded in 1845 in Annapolis, Maryland. It commissions officers into the Navy and the Marine Corps.",
+    "sourceId": "wiki-service-academies",
+    "corroboratingSources": [
+      { "title": "List of United States Naval Academy alumni", "url": "https://en.wikipedia.org/wiki/List_of_United_States_Naval_Academy_alumni", "publisher": "Wikipedia" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["2"],
+    "tags": ["academies"]
+  },
+  {
+    "id": "academy-air-force",
+    "statement": "The U.S. Air Force Academy was established in 1954 near Colorado Springs, Colorado. It commissions officers into the Air Force and the Space Force.",
+    "sourceId": "wiki-service-academies",
+    "corroboratingSources": [
+      { "title": "List of United States Air Force Academy alumni", "url": "https://en.wikipedia.org/wiki/List_of_United_States_Air_Force_Academy_alumni", "publisher": "Wikipedia" }
+    ],
+    "verifiedOn": "2026-11-04",
+    "requirements": ["2"],
+    "tags": ["academies"]
+  },
+  {
+    "id": "academy-coast-guard",
+    "statement": "The U.S. Coast Guard Academy is in New London, Connecticut.",
+    "sourceId": "wiki-service-academies",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["2"],
+    "tags": ["academies"]
+  },
+  {
+    "id": "academy-merchant-marine",
+    "statement": "The U.S. Merchant Marine Academy is in Kings Point, New York.",
+    "sourceId": "wiki-service-academies",
+    "verifiedOn": "2026-11-04",
+    "requirements": ["2"],
+    "tags": ["academies"]
+  },
+  { "id": "grad-grant", "statement": "Ulysses S. Grant graduated from West Point in 1843.", "sourceId": "wiki-usma-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-lee", "statement": "Robert E. Lee graduated from West Point in 1829, second in his class.", "sourceId": "wiki-usma-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-macarthur", "statement": "Douglas MacArthur graduated from West Point in 1903.", "sourceId": "wiki-usma-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-eisenhower", "statement": "Dwight D. Eisenhower graduated from West Point in 1915.", "sourceId": "wiki-usma-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-patton", "statement": "George S. Patton graduated from West Point in 1909.", "sourceId": "wiki-usma-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-aldrin", "statement": "Buzz Aldrin graduated from West Point in 1951. On Apollo 11 he became the second person to walk on the Moon.", "sourceId": "wiki-usma-alumni", "sourceLocation": "Astronauts", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-nimitz", "statement": "Chester Nimitz graduated from the Naval Academy in 1905.", "sourceId": "wiki-chester-nimitz", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-carter", "statement": "Jimmy Carter graduated from the Naval Academy (class of 1947).", "sourceId": "wiki-usna-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-shepard", "statement": "Astronaut Alan Shepard graduated from the Naval Academy (class of 1945).", "sourceId": "wiki-usna-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-lovell", "statement": "Jim Lovell graduated from the Naval Academy in 1952.", "sourceId": "wiki-usna-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-sijan", "statement": "Lance Sijan graduated from the Air Force Academy in 1965. He was its first graduate to receive the Medal of Honor.", "sourceId": "wiki-usafa-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-sullenberger", "statement": "Chesley “Sully” Sullenberger, the pilot who landed US Airways Flight 1549 on the Hudson River, graduated from the Air Force Academy in 1973.", "sourceId": "wiki-usafa-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] },
+  { "id": "grad-popovich", "statement": "Gregg Popovich, longtime head coach of the San Antonio Spurs, graduated from the Air Force Academy in 1970.", "sourceId": "wiki-usafa-alumni", "verifiedOn": "2026-11-04", "requirements": ["2"], "tags": ["academies", "graduates"] }
+]
